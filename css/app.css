@@ -15,3 +15,11 @@ body {
 #signature {
 		border: 2px dotted black; 
 		background-color:lightgrey; }
+
+#patSearchList, #admitSearchList{
+
+	overflow-y: auto;
+	height:	auto;
+	max-height: 410px;
+	
+}
