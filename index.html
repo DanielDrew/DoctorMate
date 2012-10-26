@@ -83,6 +83,7 @@
 					<input id="Field0" name="Field0" type="text" value="" size="8" tabindex="3" />
 					<label for="Field1">Last Name</label> </span>
 					<input id="Field1" name="Field1" type="text" value="" size="14" tabindex="4" />
+					<a href="javascript:void(0)" style="width:400px" id = "findPatient" data-role="button" data-icon="search"  data-mini="true">Find Patient</a> 
 				</div>
 
 				<label id="title3" for="Field3"> Chief Complaint: </label>
@@ -511,6 +512,42 @@
 				<li><a href="#diagnostics" class="ui-btn-active ui-state-persist">Diagnostics</a></li>
 				<li><a href="#signoff">Signatures</a></li>
 			</ul></div></div>
+		</div>
+		<!-- Patient Search Dialog --> 
+		<div data-role="dialog" data-title = "Patient Search" id="patientsearch" data-theme="a">
+			
+			<div data-role="header" data-theme="a">
+	
+				<h1>Please select patient</h1>
+		
+			</div>
+
+			<div id ="patSearchList" data-role="content" data-theme="a">
+
+			</div>
+			<div data-role="content" data-theme="a">
+			<a href="#admitSelect" id = "acceptPatient" data-role="button" data-rel="back" data-theme="b" >Accept</a>       
+			<a href="#patient" data-role="button" data-rel="back" data-theme="c">Cancel</a>   
+			</div>
+
+		</div>
+		<!-- Admission Select Dialog --> 
+		<div data-role="dialog" data-title = "Admissions" id="admitSelect" data-theme="a">
+			
+			<div id = 'admitSelectHeader'data-role="header" data-theme="a">
+	
+				<h1>Please select admission</h1>
+		
+			</div>
+
+			<div id ="admitSearchList" data-role="content" data-theme="a">
+
+			</div>
+			<div data-role="content" data-theme="a">
+			<a href="#patient" data-role="button" data-rel="back" data-theme="b" >Accept</a>       
+			<a href="#patient" data-role="button" data-rel="back" data-theme="c">Cancel</a>   
+			</div>
+
 		</div>
 
 		</form>
