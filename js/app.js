@@ -275,7 +275,8 @@ var app = {
 	}, 
 	getPatientList: function(data){
 
-		var patientSearch = "<input id='patSelect' name='patientSel' type='hidden' value='' />";
+		// var patientSearch = "<input id='patSelect' name='patientSel' type='hidden' value='' />";
+		var patientSearch = "<h4>"+data.message+"</h4>";
      	if (data.newPatient === false){
 	        var mr = data.results.mR,
 	        first = data.results.firstNames,
@@ -291,7 +292,6 @@ var app = {
 	     
 	    patientSearch+= "<span> <input type='radio' class='field radio patientChoice' name = 'patientSel' data-patientID = 'newPatient' for = 'patientSel' id = 'newPatient'/>\
 			<label for='newPatient'>New Patient</label></span>";
-
 		$("#patSearchList").empty().append(patientSearch);
 		$('.patientChoice').checkboxradio();	
 	    $("#patientsearch").dialog();
