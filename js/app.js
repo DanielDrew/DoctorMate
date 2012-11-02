@@ -68,6 +68,7 @@ var app = {
 		this.newAdmit = false;
 		this.newPatient = false;
 		this.lastName = "";
+		this.firstName = "";
 		this.dob = "";
 	},
 
@@ -266,15 +267,7 @@ var app = {
    		}else{
 			app.patient.newAdmit= false;
 			app.patient.newPatient= false;
-   			params = new function(){
-				this.patientID = app.patient.patientIndex,
-				this.lastName = app.patient.lastName,
-				this.dob = app.patient.dob,
-				this.newPatient =app.patient.newPatient,
-				this.newAdmit = app.patient.newAdmit;
-				};
-
-			app.makeRequest("findAdmit", params, app.getAdmitList);
+			app.makeRequest("findAdmit", app.patient, app.getAdmitList);
    		}
 
 		
