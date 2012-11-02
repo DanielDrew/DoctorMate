@@ -34,6 +34,7 @@ $(document).ready(function() {
 	$("#clearPatient").addClass("ui-disabled");
 	$("#sendPatientData").bind("click", app.sendPatientData);
 	$("#patient_UniqueIndex").hide();
+$("#patient #history #systems #diagnostics #signatures").trigger( "create" );
 });
 
 $.fn.clearForm = function() {
@@ -67,6 +68,7 @@ var app = {
 		this.newAdmit = false;
 		this.newPatient = false;
 		this.lastName = "";
+		this.dob = "";
 	},
 
 
@@ -96,6 +98,17 @@ var app = {
 		$("#confirm-clear-dialog").dialog();
 
 
+	},
+
+	initPatient : function(){
+		
+			app.patient.patientID = ""; //MR Number
+			app.patient.admitID = "";		 //VisitNumber
+			app.patient.patientIndex = "";  //PatientNumber
+			app.patient.newAdmit = false;
+			app.patient.newPatient = false;
+			app.patient.lastName = "";
+	
 	},
 
 	homePage : function() {
@@ -229,21 +242,19 @@ var app = {
 	},
 
 	findPatient: function(){
-		var patientID = $('#patient_id').val();
+
+		app.patient.patientID = $('#patient_id').val();
 		app.patient.lastName = $('#pat_LastName').val();
 		app.patient.firstName = $('#pat_FirstName').val();
-		var params = new function(){ this.patientID = ""; this.lastName = "";};
 		app.patient.dob = $('#pat_DOB').val();
-		params.patientID = patientID;
-		params.lastName = app.patient.lastName;
-		params.firstName = app.patient.firstName;
-		params.dob = app.patient.dob;
+		
 
 		if (app.patient.patientID != "" || app.patient.lastName != ""){
-			app.makeRequest("findPatient", params, app.getPatientList);
+			app.makeRequest("findPatient", app.patient, app.getPatientList);
 		}else{
 			alert("Please enter Patient's Last name and Date of Birth or the ID to search for your patient."); //Change to Popup 
 		}
+
 	},
 	findAdmit : function(){
 		app.patient.patientIndex = $('#patSearchList input:checked ').attr("data-patientID");
@@ -405,6 +416,7 @@ var app = {
 
 	},
 	loadPatientData : function(data){
+		console.log("Start Patient Load");
 		$("#clearPatient").removeClass("ui-disabled");
 		var fields = data.patient;
 		app.patientData = fields;
@@ -421,7 +433,7 @@ var app = {
 				break;
 			}
 		}
-
+		console.log("End Patient Load");
 		// $('.ui-collapsible-heading-toggle').trigger( "expand" );
 
 		// var fields = data.patient.mobileCheckFields,
@@ -436,6 +448,7 @@ var app = {
 	},
 	clearPatient : function(){
 		$("#confirm-clear-button").bind("click", app.acceptPatientClear);
+		app.initPatient();
 		$.mobile.changePage("#confirm-clear-dialog");
 	},
 	acceptPatientClear: function(){
