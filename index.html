@@ -93,15 +93,12 @@
 					<input id="pat_ArrivalDate" name="pat_ArrivalDate" type="date" value="" size="8" tabindex="4" />
 					<a href="javascript:void(0)" style="width:400px" id = "findPatient" data-role="button" data-icon="search"  data-mini="true">Find Patient</a> 
 					<a href="javascript:void(0)" style="width:400px" id = "clearPatient" data-role="button" data-icon="alert"  data-mini="true" >Clear and Load New Patient</a> 
-
- 
 				</div>
 
-                <label id="title3" for="pat_chiefComplaint"> Chief Complaint:
-</label>                 <textarea class="ui-block-solo"
-id="pat_chiefComplaint" name="pat_chiefComplaint" class="field textarea small"
-spellcheck="true" rows="10" cols="50" tabindex="6" onkeyup=""></textarea>
-</div>
+                <label id="title3" for="pat_chiefComplaint"> Chief Complaint:</label>
+                <textarea class="ui-block-solo" id="pat_chiefComplaint" name="pat_chiefComplaint" class="field textarea small" spellcheck="true" rows="10" cols="50" tabindex="6" onkeyup="">
+                </textarea>
+			</div>
 			
 			<div data-role="footer" data-id="nav" data-position="fixed"><div data-role="navbar" ><ul>
 				<li><a href="#patient" class="ui-btn-active ui-state-persist">Patient Info</a></li>
@@ -526,7 +523,7 @@ spellcheck="true" rows="10" cols="50" tabindex="6" onkeyup=""></textarea>
 			</ul></div></div>
 		</div>
 		<!-- Patient Search Dialog --> 
-		<div data-role="dialog" data-title = "Patient Search" id="patientsearch" data-theme="a">
+		<div data-role="dialog" data-title = "Patient Search" id="patientsearch" data-theme="a" style = "width: 75%;">
 			
 			<div data-role="header" data-theme="a">
 	
@@ -544,7 +541,7 @@ spellcheck="true" rows="10" cols="50" tabindex="6" onkeyup=""></textarea>
 
 		</div>
 		<!-- Admission Select Dialog --> 
-		<div data-role="dialog" data-title = "Admissions" id="admitSelect" data-theme="a">
+		<div data-role="dialog" data-title = "Admissions" id="admitSelect" data-theme="a" style = "width: 75%;">
 			
 			<div id = 'admitSelectHeader'data-role="header" data-theme="a">
 	
