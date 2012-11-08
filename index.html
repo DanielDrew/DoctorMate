@@ -160,7 +160,7 @@
 								</button>
 							</fieldset>
 						</div>
-						<textarea style="padding:0" id="Field4" name="Field4" class="field textarea small" spellcheck="true" rows="10" cols="50" onkeyup=""></textarea>																																																																																																
+						<textarea style="padding:0" id="Field4" name="Field4" class="field textarea small" spellcheck="true" rows="10" cols="50" onkeyup=""></textarea>																																																																																																																		
 
  <!--
 						=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -485,8 +485,11 @@
 						<label class="desc" id="title4" for="Field4"> Please list any medication allergies that you have : </label>
 						<textarea id="Field4" name="Field4" class="field textarea medium" spellcheck="true" rows="10" cols="50" onkeyup="" ></textarea>
 						<label class="desc" id="title306" for="Field306"> Please list any medications you are currently taking (and dosage if known) : </label>
-						<textarea id="Field306" name="Field306" class="field textarea medium" spellcheck="true" rows="10" cols="50" onkeyup="" ></textarea>						
+						<textarea id="Field306" name="Field306" class="field textarea medium" spellcheck="true" rows="10" cols="50" onkeyup="" ></textarea>																								
 						
+
+
+
 						<fieldset data-role="controlgroup" data-type="horizontal">
 							<legend  class="desc">
 								Pneumovax ever received?
@@ -567,6 +570,7 @@
 									<input id="systems_general_dizzy" name="systems_general_dizzy" type="checkbox" class="field checkbox" />
 									<label class="choice" for="systems_general_chills">Chills</label>
 									<input id="systems_general_chills" name="systems_general_chills" type="checkbox" class="field checkbox" />
+									<input id="systems_general_txt" type="text" class="field text fn" value="" size="20" />
 								</fieldset>
 							</div>
 							<div class="ui-block-b" style="width:30%; padding-left:20px">
@@ -595,6 +599,7 @@
 									<input id="systems_heent_nbleed" name="systems_heent_nbleed" type="checkbox" class="field checkbox" />
 									<label class="choice" for="systems_heent_gbleed">Bleeding Gums</label>
 									<input id="systems_heent_gbleed" name="systems_heent_gbleed" type="checkbox" class="field checkbox" />
+									<input id="systems_heent_txt" type="text" class="field text fn" value="" size="20" />
 								</fieldset>
 							</div>
 
@@ -618,6 +623,7 @@
 									<input id="systems_pulm_sob" name="systems_pulm_sob" type="checkbox" class="field checkbox" />
 									<label class="choice" for="systems_pulm_sputum">Productive Sputum</label>
 									<input id="systems_pulm_sputum" name="systems_pulm_sputum" type="checkbox" class="field checkbox" />
+									<input id="systems_pulm_txt" type="text" class="field text fn" value="" size="20" />
 								</fieldset>
 							</div>
 
@@ -634,7 +640,17 @@
 						<fieldset class="ui-grid-a">
 							<div class="ui-block-a" style="width:70%" data-role="collapsible" data-content-theme="a" data-iconpos="right" data-theme="e">
 								<h3>CARDIOVASCULAR:</h3>
-								More to come...
+								<fieldset data-role="controlgroup" data-type="horizontal">
+									<label class="choice" for="systems_card_chestpain">Chest Pain</label>
+									<input id="systems_card_chestpain" type="checkbox" class="field checkbox" />
+									<label class="choice" for="systems_card_palp">Palpitations</label>
+									<input id="systems_card_palp" type="checkbox" class="field checkbox" />
+									<label class="choice" for="systems_card_ankleedema">Ankle Edema</label>
+									<input id="systems_card_ankleedema" type="checkbox" class="field checkbox" />
+									<label class="choice" for="systems_card_claudication">Claudication</label>
+									<input id="systems_card_claudication" type="checkbox" class="field checkbox" />
+									<input id="systems_card_txt" type="text" class="field text fn" value="" size="20" />
+								</fieldset>
 							</div>
 
 							<div class="ui-block-b" style="width:30%; padding-left:20px">
@@ -651,6 +667,7 @@
 							<div class="ui-block-a" style="width:70%" data-role="collapsible" data-content-theme="a" data-iconpos="right" data-theme="b">
 								<h3>GASTROINTESTINAL:</h3>
 								More to come...
+								<input id="systems_gast_txt" type="text" class="field text fn" value="" size="20" />
 							</div>
 
 							<div class="ui-block-b" style="width:30%; padding-left:20px">
@@ -667,6 +684,7 @@
 							<div class="ui-block-a" style="width:70%" data-role="collapsible" data-content-theme="b" data-iconpos="right" data-theme="e">
 								<h3>GENITO-URINARY / GYN:</h3>
 								More to come...
+								<input id="systems_genito_txt" type="text" class="field text fn" value="" size="20" />
 							</div>
 
 							<div class="ui-block-b" style="width:30%; padding-left:20px">
@@ -683,6 +701,7 @@
 							<div class="ui-block-a" style="width:70%" data-role="collapsible" data-content-theme="a" data-iconpos="right" data-theme="b">
 								<h3>NEUROLOGY:</h3>
 								More to come...
+								<input id="systems_neurology_txt" type="text" class="field text fn" value="" size="20" />
 							</div>
 
 							<div class="ui-block-b" style="width:30%; padding-left:20px">
@@ -697,8 +716,43 @@
 
 						<fieldset class="ui-grid-a">
 							<div class="ui-block-a" style="width:70%" data-role="collapsible" data-content-theme="a" data-iconpos="right" data-theme="e">
-								<h3>MUSCULOSKELITAL: </h3>
+								<h3>BREAST: </h3>
 								More to come...
+								<input id="systems_breast_txt" type="text" class="field text fn" value="" size="20" />
+							</div>
+
+							<div class="ui-block-b" style="width:30%; padding-left:20px">
+								<fieldset data-role="controlgroup" data-type="horizontal" >
+									<label class="choice" for="systems_musc_all">All Negative</label>
+									<input id="systems_musc_all" name="systems_musc_all" type="checkbox" class="field checkbox" />
+									<label class="choice" for="systems_musc_hpi">See HPI</label>
+									<input id="systems_musc_hpi" name="systems_musc_hpi" type="checkbox" class="field checkbox" />
+								</fieldset>
+							</div>
+						</fieldset>
+
+						<fieldset class="ui-grid-a">
+							<div class="ui-block-a" style="width:70%" data-role="collapsible" data-content-theme="a" data-iconpos="right" data-theme="b">
+								<h3>NEURO/PSYCH: </h3>
+								More to come...
+								<input id="systems_neuro_txt" type="text" class="field text fn" value="" size="20" />
+							</div>
+
+							<div class="ui-block-b" style="width:30%; padding-left:20px">
+								<fieldset data-role="controlgroup" data-type="horizontal" >
+									<label class="choice" for="systems_musc_all">All Negative</label>
+									<input id="systems_musc_all" name="systems_musc_all" type="checkbox" class="field checkbox" />
+									<label class="choice" for="systems_musc_hpi">See HPI</label>
+									<input id="systems_musc_hpi" name="systems_musc_hpi" type="checkbox" class="field checkbox" />
+								</fieldset>
+							</div>
+						</fieldset>
+
+						<fieldset class="ui-grid-a">
+							<div class="ui-block-a" style="width:70%" data-role="collapsible" data-content-theme="a" data-iconpos="right" data-theme="e">
+								<h3>LYMPHATICS: </h3>
+								More to come...
+								<input id="systems_lymph_txt" type="text" class="field text fn" value="" size="20" />
 							</div>
 
 							<div class="ui-block-b" style="width:30%; padding-left:20px">
@@ -714,68 +768,8 @@
 						<fieldset class="ui-grid-a">
 							<div class="ui-block-a" style="width:70%" data-role="collapsible" data-content-theme="a" data-iconpos="right" data-theme="b">
 								<h3>SKIN:</h3>
-								<ul>
-									<li id="foli311" class="notranslate      ">
-										<fieldset data-role="controlgroup" data-type="horizontal">
-											<legend id="title311" class="desc">
-												Are you currently using or do you have a history of illegal drug use?
-											</legend>
-											<div>
-												<input id="radioDefault_311" name="Field311" type="hidden" value="" />
-												<span>
-													<input id="Field311_0" name="Field311" type="radio" class="field radio" value="Yes" />
-													<label class="choice" for="Field311_0" > Yes</label> </span>
-												<span>
-													<input id="Field311_1" name="Field311" type="radio" class="field radio" value="No" />
-													<label class="choice" for="Field311_1" > No</label> </span>
-											</div>
-										</fieldset>
-									</li>
-									<li id="foli313" class="notranslate      ">
-										<fieldset data-role="controlgroup" data-type="horizontal">
-											<legend id="title313" class="desc">
-												Do you feel you are at risk for falls or falling injuries?
-											</legend>
-											<div>
-												<input id="radioDefault_313" name="Field313" type="hidden" value="" />
-												<span>
-													<input id="Field313_0" name="Field313" type="radio" class="field radio" value="Yes" />
-													<label class="choice" for="Field313_0" > Yes</label> </span>
-												<span>
-													<input id="Field313_1" name="Field313" type="radio" class="field radio" value="No" />
-													<label class="choice" for="Field313_1" > No</label> </span>
-											</div>
-										</fieldset>
-									</li>
-									<li id="foli312" class="notranslate      ">
-										<fieldset data-role="controlgroup" data-type="horizontal">
-											<legend id="title312" class="desc">
-												Please describe your alcohol consumption :
-											</legend>
-											<div>
-												<input id="radioDefault_312" name="Field312" type="hidden" value="" />
-												<span>
-													<input id="Field312_0" name="Field312" type="radio" class="field radio" value="Daily" />
-													<label class="choice" for="Field312_0" > Daily</label> </span>
-												<span>
-													<input id="Field312_1" name="Field312" type="radio" class="field radio" value="Weekly" />
-													<label class="choice" for="Field312_1" > Weekly</label> </span>
-												<span>
-													<input id="Field312_2" name="Field312" type="radio" class="field radio" value="Monthly" />
-													<label class="choice" for="Field312_2" > Monthly</label> </span>
-												<span>
-													<input id="Field312_3" name="Field312" type="radio" class="field radio" value="Occasionally"  />
-													<label class="choice" for="Field312_3" > Occasionally</label> </span>
-												<span>
-													<input id="Field312_4" name="Field312" type="radio" class="field radio" value="Rarely"  />
-													<label class="choice" for="Field312_4" > Rarely</label> </span>
-												<span>
-													<input id="Field312_5" name="Field312" type="radio" class="field radio" value="Never" />
-													<label class="choice" for="Field312_5" > Never</label> </span>
-											</div>
-										</fieldset>
-									</li>
-								</ul>
+								More to come...
+								<input id="systems_skin_txt" type="text" class="field text fn" value="" size="20" />
 							</div>
 
 							<div class="ui-block-b" style="width:30%; padding-left:20px">
@@ -786,6 +780,72 @@
 									<input id="systems_skin_hpi" name="systems_skin_hpi" type="checkbox" class="field checkbox" />
 								</fieldset>
 							</div>
+						</fieldset>
+						<fieldset class="ui-grid-a" style="width:100%">
+							<h3>SOCIAL HISTORY:</h3>
+							<ul>
+								<li id="foli311" class="notranslate      ">
+									<fieldset data-role="controlgroup" data-type="horizontal">
+										<legend id="title311" class="desc">
+											Are you currently using or do you have a history of illegal drug use?
+										</legend>
+										<div>
+											<input id="radioDefault_311" name="Field311" type="hidden" value="" />
+											<span>
+												<input id="Field311_0" name="Field311" type="radio" class="field radio" value="Yes" />
+												<label class="choice" for="Field311_0" > Yes</label> </span>
+											<span>
+												<input id="Field311_1" name="Field311" type="radio" class="field radio" value="No" />
+												<label class="choice" for="Field311_1" > No</label> </span>
+										</div>
+									</fieldset>
+								</li>
+
+								<li id="foli313" class="notranslate      ">
+									<fieldset data-role="controlgroup" data-type="horizontal">
+										<legend id="title313" class="desc">
+											Do you feel you are at risk for falls or falling injuries?
+										</legend>
+										<div>
+											<input id="radioDefault_313" name="Field313" type="hidden" value="" />
+											<span>
+												<input id="Field313_0" name="Field313" type="radio" class="field radio" value="Yes" />
+												<label class="choice" for="Field313_0" > Yes</label> </span>
+											<span>
+												<input id="Field313_1" name="Field313" type="radio" class="field radio" value="No" />
+												<label class="choice" for="Field313_1" > No</label> </span>
+										</div>
+									</fieldset>
+								</li>
+								<li id="foli312" class="notranslate      ">
+									<fieldset data-role="controlgroup" data-type="horizontal">
+										<legend id="title312" class="desc">
+											Please describe your alcohol consumption :
+										</legend>
+										<div>
+											<input id="radioDefault_312" name="Field312" type="hidden" value="" />
+											<span>
+												<input id="Field312_0" name="Field312" type="radio" class="field radio" value="Daily" />
+												<label class="choice" for="Field312_0" > Daily</label> </span>
+											<span>
+												<input id="Field312_1" name="Field312" type="radio" class="field radio" value="Weekly" />
+												<label class="choice" for="Field312_1" > Weekly</label> </span>
+											<span>
+												<input id="Field312_2" name="Field312" type="radio" class="field radio" value="Monthly" />
+												<label class="choice" for="Field312_2" > Monthly</label> </span>
+											<span>
+												<input id="Field312_3" name="Field312" type="radio" class="field radio" value="Occasionally"  />
+												<label class="choice" for="Field312_3" > Occasionally</label> </span>
+											<span>
+												<input id="Field312_4" name="Field312" type="radio" class="field radio" value="Rarely"  />
+												<label class="choice" for="Field312_4" > Rarely</label> </span>
+											<span>
+												<input id="Field312_5" name="Field312" type="radio" class="field radio" value="Never" />
+												<label class="choice" for="Field312_5" > Never</label> </span>
+										</div>
+									</fieldset>
+								</li>
+							</ul>
 						</fieldset>
 					</div>
 					<div data-role="footer" data-id="nav" data-position="fixed">
