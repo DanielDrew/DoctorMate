@@ -91,14 +91,7 @@
 					</div>
 
 					<div data-role="content">
-						<fieldset class="ui-grid-a">
-							<div class="ui-block-a">
 
-							</div>
-							<div class="ui-block-b">
-
-							</div>
-						</fieldset>
 						<div data-role="fieldcontain">
 							<label for="patient_id">Patient ID</label>
 							<input id="patient_id" name="patient_id" type="text" value="" size="8" />
@@ -111,10 +104,11 @@
 							<input id="pat_DOB" name="pat_DOB" type="date" value="" size="8" />
 							<label class="desc" id="patArrivalDate" for="pat_ArrivalDate"> Date of Arrival </label>
 							<input id="pat_ArrivalDate" name="pat_ArrivalDate" type="date" value="" size="8" />
-							<a href="javascript:void(0)" style="width:400px" id = "findPatient" data-role="button" data-icon="search"  data-mini="true">Find Patient</a>
-							<a href="javascript:void(0)" style="width:400px" id = "clearPatient" data-role="button" data-icon="alert"  data-mini="true" >Clear and Load New Patient</a>
-
 						</div>
+						<fieldset data-role="controlgroup" data-type="horizontal">
+							<a href="javascript:void(0)" style="width:49%" id="findPatient" data-role="button" data-icon="search"  data-mini="true">Find Patient</a>
+							<a href="javascript:void(0)" style="width:49%" id="clearPatient" data-role="button" data-icon="alert"  data-mini="true" >Clear and Load New Patient</a>
+						</fieldset>
 
 						<label id="title3" for="pat_chiefComplaint"> Chief Complaint: </label>
 						<textarea class="ui-block-solo" id="pat_chiefComplaint" name="pat_chiefComplaint" class="field textarea small" spellcheck="true" rows="10" cols="50" onkeyup=""></textarea>
@@ -166,21 +160,21 @@
 								</button>
 							</fieldset>
 						</div>
-						<textarea style="padding:0" id="Field4" name="Field4" class="field textarea small" spellcheck="true" rows="10" cols="50" onkeyup=""></textarea>																																																																		
+						<textarea style="padding:0" id="Field4" name="Field4" class="field textarea small" spellcheck="true" rows="10" cols="50" onkeyup=""></textarea>																																																																																																
 
- 						<!--
-	 						=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-							Here is a cool mockup, I'd recommend using wherever possible...
- 							=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-							<div>
-							<select name="select-choice-9" id="select-choice-9" multiple="multiple" data-native-menu="false">
-								<option>Cancer</option>
-								<option value="cancer_father">Father</option>
-								<option value="cancer_mother">Mother</option>
-								<option value="cancer_brother">Brother</option>
-								<option value="cancer_sister">Sister</option>
-							</select>
-							</div>
+ <!--
+						=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+						Here is a cool mockup, I'd recommend using wherever possible...
+						=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+						<div>
+						<select name="select-choice-9" id="select-choice-9" multiple="multiple" data-native-menu="false">
+						<option>Cancer</option>
+						<option value="cancer_father">Father</option>
+						<option value="cancer_mother">Mother</option>
+						<option value="cancer_brother">Brother</option>
+						<option value="cancer_sister">Sister</option>
+						</select>
+						</div>
 						-->
 
 						<fieldset data-role="controlgroup" data-type="horizontal">
@@ -327,45 +321,204 @@
 							<legend id="title7" class="desc">
 								PMH: <i>(check if positive)</i>
 							</legend>
-							<input id="Field7" name="Field7" type="checkbox" class="field checkbox" value="AIDS" />
-							<label class="choice" for="Field7">AIDS</label>
-							<input id="Field8" name="Field8" type="checkbox" class="field checkbox" value="Anemia" />
-							<label class="choice" for="Field8">Anemia</label>
+
 							<span>
-								<input id="Field9" name="Field9" type="checkbox" class="field checkbox" value="Bleeding Disorders" />
-								<label class="choice" for="Field9">Bleeding Disorders</label> </span>
+								<input id="pmh_aids" type="checkbox" value="AIDS" class="field checkbox" />
+								<label class="choice" for="pmh_aids">AIDS</label>
+								<input id="pmh_aids_txt" type="text"/>
+								<script>
+									$('#pmh_aids_txt').hide();
+									$('#pmh_aids').click(function() {
+										var checked_status = this.checked;
+										if (checked_status == true) {
+											$('#pmh_aids_txt').show();
+										} else {
+											$('#pmh_aids_txt').hide();
+										}
+									});
+								</script> </span>
+
 							<span>
-								<input id="Field10" name="Field10" type="checkbox" class="field checkbox" value="Cancer" />
-								<label class="choice" for="Field10">Cancer</label> </span>
+								<input id="pmh_anemia" type="checkbox" value="Anemia" class="field checkbox" />
+								<label class="choice" for="pmh_anemia">Anemia</label>
+								<input id="pmh_anemia_txt" type="text"/>
+								<script>
+									$('#pmh_anemia_txt').hide();
+									$('#pmh_anemia').click(function() {
+										var checked_status = this.checked;
+										if (checked_status == true) {
+											$('#pmh_anemia_txt').show();
+										} else {
+											$('#pmh_anemia_txt').hide();
+										}
+									});
+								</script> </span>
+
 							<span>
-								<input id="Field11" name="Field11" type="checkbox" class="field checkbox" value="Diabetes" />
-								<label class="choice" for="Field11">Diabetes</label> </span>
+								<input id="pmh_bleeding" type="checkbox" value="Bleeding" class="field checkbox" />
+								<label class="choice" for="pmh_bleeding">Bleeding Disorders</label>
+								<input id="pmh_bleeding_txt" type="text"/>
+								<script>
+									$('#pmh_bleeding_txt').hide();
+									$('#pmh_bleeding').click(function() {
+										var checked_status = this.checked;
+										if (checked_status == true) {
+											$('#pmh_bleeding_txt').show();
+										} else {
+											$('#pmh_bleeding_txt').hide();
+										}
+									});
+								</script> </span>
 							<span>
-								<input id="Field12" name="Field12" type="checkbox" class="field checkbox" value="Hepatitis" />
-								<label class="choice" for="Field12">Hepatitis</label> </span>
+								<input id="pmh_cancer" type="checkbox" value="Cancer" class="field checkbox" />
+								<label class="choice" for="pmh_cancer">Cancer</label>
+								<input id="pmh_cancer_txt" type="text" default="Cancer info"/>
+								<script>
+									$('#pmh_cancer_txt').hide();
+									$('#pmh_cancer').click(function() {
+										var checked_status = this.checked;
+										if (checked_status == true) {
+											$('#pmh_cancer_txt').show();
+										} else {
+											$('#pmh_cancer_txt').hide();
+										}
+									});
+								</script> </span>
 							<span>
-								<input id="Field13" name="Field13" type="checkbox" class="field checkbox" value="Heart Disease" />
-								<label class="choice" for="Field13">Heart Disease</label> </span>
+								<input id="pmh_diabetes" type="checkbox" value="Diabetes" class="field checkbox" />
+								<label class="choice" for="pmh_diabetes">Diabetes</label>
+								<input id="pmh_diabetes_txt" type="text"/>
+								<script>
+									$('#pmh_diabetes_txt').hide();
+									$('#pmh_diabetes').click(function() {
+										var checked_status = this.checked;
+										if (checked_status == true) {
+											$('#pmh_diabetes_txt').show();
+										} else {
+											$('#pmh_diabetes_txt').hide();
+										}
+									});
+								</script> </span>
 							<span>
-								<input id="Field14" name="Field14" type="checkbox" class="field checkbox" value="High Cholesterol" />
-								<label class="choice" for="Field14">High Cholesterol</label> </span>
+								<input id="pmh_hepatitis" type="checkbox" value="Hepatitis" class="field checkbox" />
+								<label class="choice" for="pmh_hepatitis">Hepatitis</label>
+								<input id="pmh_hepatitis_txt" type="text"/>
+								<script>
+									$('#pmh_hepatitis_txt').hide();
+									$('#pmh_hepatitis').click(function() {
+										var checked_status = this.checked;
+										if (checked_status == true) {
+											$('#pmh_hepatitis_txt').show();
+										} else {
+											$('#pmh_hepatitis_txt').hide();
+										}
+									});
+								</script> </span>
 							<span>
-								<input id="Field15" name="Field15" type="checkbox" class="field checkbox" value="Pneumonia" />
-								<label class="choice" for="Field15">Pneumonia</label> </span>
+								<input id="pmh_heartdisease" type="checkbox" value="Heart Disease" class="field checkbox" />
+								<label class="choice" for="pmh_heartdisease">Heart Disease</label>
+								<input id="pmh_heartdisease_txt" type="text"/>
+								<script>
+									$('#pmh_heartdisease_txt').hide();
+									$('#pmh_heartdisease').click(function() {
+										var checked_status = this.checked;
+										if (checked_status == true) {
+											$('#pmh_heartdisease_txt').show();
+										} else {
+											$('#pmh_heartdisease_txt').hide();
+										}
+									});
+								</script> </span>
 							<span>
-								<input id="Field16" name="Field16" type="checkbox" class="field checkbox" value="TB" />
-								<label class="choice" for="Field16">TB</label> </span>
+								<input id="pmh_cholesterol" type="checkbox" value="High Cholesterol" class="field checkbox" />
+								<label class="choice" for="pmh_cholesterol">High Cholesterol</label>
+								<input id="pmh_cholesterol_txt" type="text"/>
+								<script>
+									$('#pmh_cholesterol_txt').hide();
+									$('#pmh_cholesterol').click(function() {
+										var checked_status = this.checked;
+										if (checked_status == true) {
+											$('#pmh_cholesterol_txt').show();
+										} else {
+											$('#pmh_cholesterol_txt').hide();
+										}
+									});
+								</script> </span>
 							<span>
-								<input id="Field17" name="Field17" type="checkbox" class="field checkbox" value="Other" />
-								<label class="choice" for="Field17">Other(s):</label>
-								<input id="Field18" name="Field18" type="text" class="field text fn" value="" size="20" />
+								<input id="pmh_pneumonia" type="checkbox" value="Pneumonia" class="field checkbox" />
+								<label class="choice" for="pmh_pneumonia">Pneumonia</label>
+								<input id="pmh_pneumonia_txt" type="text"/>
+								<script>
+									$('#pmh_pneumonia_txt').hide();
+									$('#pmh_pneumonia').click(function() {
+										var checked_status = this.checked;
+										if (checked_status == true) {
+											$('#pmh_pneumonia_txt').show();
+										} else {
+											$('#pmh_pneumonia_txt').hide();
+										}
+									});
+								</script> </span>
+							<span>
+								<input id="pmh_tb" type="checkbox" value="TB" class="field checkbox" />
+								<label class="choice" for="pmh_tb">TB</label>
+								<input id="pmh_tb_txt" type="text"/>
+								<script>
+									$('#pmh_tb_txt').hide();
+									$('#pmh_tb').click(function() {
+										var checked_status = this.checked;
+										if (checked_status == true) {
+											$('#pmh_tb_txt').show();
+										} else {
+											$('#pmh_tb_txt').hide();
+										}
+									});
+								</script> </span>
+							<span>
+								<input id="pmh_other" type="checkbox" class="field checkbox" value="Other" />
+								<label class="choice" for="pmh_other">Other(s):</label>
+								<input id="pmh_other_txt" type="text" class="field text fn" value="" size="20" />
 							</span>
+
 						</fieldset>
 
 						<label class="desc" id="title4" for="Field4"> Please list any medication allergies that you have : </label>
 						<textarea id="Field4" name="Field4" class="field textarea medium" spellcheck="true" rows="10" cols="50" onkeyup="" ></textarea>
 						<label class="desc" id="title306" for="Field306"> Please list any medications you are currently taking (and dosage if known) : </label>
-						<textarea id="Field306" name="Field306" class="field textarea medium" spellcheck="true" rows="10" cols="50" onkeyup="" ></textarea>
+						<textarea id="Field306" name="Field306" class="field textarea medium" spellcheck="true" rows="10" cols="50" onkeyup="" ></textarea>						
+						
+						<fieldset data-role="controlgroup" data-type="horizontal">
+							<legend  class="desc">
+								Pneumovax ever received?
+							</legend>
+							<input name="pneumo_vax" id="pneumo_yes" type="radio" class="field radio" value="Yes" />
+							<label class="choice" for="pneumo_yes" > Yes</label> </span>
+							<input name="pneumo_vax" id="pneumo_no" type="radio" class="field radio" value="No" />
+							<label class="choice" for="pneumo_no" > No</label>
+							<input name="pneumo_vax" id="pneumo_na" type="radio" class="field radio" value="NA" />
+							<label class="choice" for="pneumo_na" > N/A</label>
+						</fieldset>
+
+						<fieldset data-role="controlgroup" data-type="horizontal">
+							<legend  class="desc">
+								Flu vaccine ever received?
+							</legend>
+							<input name="flu_vax" id="flu_yes" type="radio" class="field radio" value="Yes" />
+							<label class="choice" for="flu_yes" > Yes</label> </span>
+							<input name="flu_vax" id="flu_no" type="radio" class="field radio" value="No" />
+							<label class="choice" for="flu_no" > No</label>
+						</fieldset>
+
+						<fieldset data-role="controlgroup" data-type="horizontal">
+							<legend class="desc">
+								Advanced Directives?
+							</legend>
+							<input id="Field311_0" name="Field311" type="radio" class="field radio" value="Yes" />
+							<label class="choice" for="Field311_0" > Yes</label> </span>
+							<input id="Field311_1" name="Field311" type="radio" class="field radio" value="No" />
+							<label class="choice" for="Field311_1" > No</label>
+						</fieldset>
+
 					</div>
 					<div data-role="footer" data-id="nav" data-position="fixed">
 						<div data-role="navbar">
