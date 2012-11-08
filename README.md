@@ -10,3 +10,5 @@ We are currently trying to figure out how we want the patient search to work, ri
 I have also realized that I need to change the call for return on patient ID to make it not search I guess. I have a few projects to work on today and will be working on both today and probably thoughout the weekend. I will continue updating after I make any changes that I want to keep, and if you want to test with our backend you can test @ https://dev.cardiopulse.net/DoctorMate/
 
 Beth Israel Hospital Prototype
+
+test
