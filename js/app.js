@@ -34,7 +34,15 @@ $(document).ready(function() {
 	$("#clearPatient").addClass("ui-disabled");
 	$("#sendPatientData").bind("click", app.sendPatientData);
 	$("#patient_UniqueIndex").hide();
-$("#patient #history #systems #diagnostics #signatures").trigger( "create" );
+	$("#patient #history #systems #diagnostics #signatures").trigger( "create" );
+	$.mobile.ajaxLinksEnabled = false;
+	var mic = document.getElementById('mic');
+	mic.onfocus = mic.blur;
+	mic.onwebkitspeechchange = function(e) {
+    //console.log(e); // SpeechInputEvent
+    document.getElementById('pat_chiefComplaint').value = mic.value;
+};
+
 });
 
 $.fn.clearForm = function() {
@@ -52,6 +60,46 @@ $.fn.clearForm = function() {
       this.selectedIndex = -1;
   });
 };
+
+$(".FamHistory").bind("click", function(){
+	var markParent = $(this).parent().children("input").is(":checked");  //To see the current state of this field if false then it is being turned on at this time
+	
+	var childrenChecked = $(".FamHistoryParent").children().has(this).children().children().children(".ui-checkbox").children("input:checked").length;
+
+
+	if (!markParent){
+		
+		//this section is is if it being turned on 
+
+
+		// var collapseParent = $(".FamHistoryParent").children().has(this).parent().children("h3").children("a");
+
+		// $(".FamHistoryParent").children().has(this)
+
+
+		//$(".FamHistoryParent").children().has(this).children().children().children(".ui-checkbox").children("input:checked")  This will return all of the checked true fields in this collapsing section
+
+		
+		if (childrenChecked >= 0){
+			//then mark parent as checked
+			$(this).parent().parent().parent().parent().parent().children().children("a").removeClass("ui-btn-up-a").addClass("ui-btn-up-b").data("theme", "b");
+		}else{
+			$(this).parent().parent().parent().parent().parent().children().children("a").removeClass("ui-btn-up-b").addClass("ui-btn-up-a").data("theme", "a");
+		}
+	}else{
+		//Turning the field off
+				if (childrenChecked > 1){
+			//then mark parent as checked
+			$(this).parent().parent().parent().parent().parent().children().children("a").removeClass("ui-btn-up-a").addClass("ui-btn-up-b").data("theme", "b");
+		}else{
+			$(this).parent().parent().parent().parent().parent().children().children("a").removeClass("ui-btn-up-b").addClass("ui-btn-up-a").data("theme", "a");
+		}
+
+	}
+
+
+
+});
 
 
 var app = {
@@ -78,22 +126,22 @@ var app = {
 		//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 		// Core device detection functions
 		//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-		var userAgent = navigator.userAgent.toLowerCase();
-		if (userAgent.indexOf('webkit') >= 0) {
-			if (userAgent.indexOf('blackberry') >= 0) {
-				app.deviceType = (window.tinyHippos) ? 'RippleBlackberry' : 'Blackberry';
-			} else if (userAgent.indexOf('playbook') >= 0) {
-				app.deviceType = (window.tinyHippos) ? 'RipplePlaybook' : 'Playbook';
-			}
-		}
-		console.log('Device: ' + app.deviceType);
+		// var userAgent = navigator.userAgent.toLowerCase();
+		// if (userAgent.indexOf('webkit') >= 0) {
+		// 	if (userAgent.indexOf('blackberry') >= 0) {
+		// 		app.deviceType = (window.tinyHippos) ? 'RippleBlackberry' : 'Blackberry';
+		// 	} else if (userAgent.indexOf('playbook') >= 0) {
+		// 		app.deviceType = (window.tinyHippos) ? 'RipplePlaybook' : 'Playbook';
+		// 	}
+		// }
+		// console.log('Device: ' + app.deviceType);
 
-		// Set up Microphone ONLY if Playbook!
-		if (app.deviceType === 'Playbook') {
-			console.log('Playbook detected!');
-			app.mic = blackberry.media.microphone;
-			app.filePath = blackberry.io.dir.appDirs.shared.music.path;
-		}
+		// // Set up Microphone ONLY if Playbook!
+		// if (app.deviceType === 'Playbook') {
+		// 	console.log('Playbook detected!');
+		// 	app.mic = blackberry.media.microphone;
+		// 	app.filePath = blackberry.io.dir.appDirs.shared.music.path;
+		// }
 		// Send to desired home page once page is loaded
 		window.setTimeout(app.homePage, 200);
 		$("#confirm-clear-dialog").dialog();

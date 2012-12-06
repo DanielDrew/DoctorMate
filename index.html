@@ -2,7 +2,6 @@
 <html>
 	<head>
 		<title>CardioBerry</title>
-
 		<meta name="x-blackberry-defaultHoverEffect" content="false" />
 		<meta name="viewport" content="initial-scale=1.0,width=device-width,user-scalable=no,target-densitydpi=device-dpi" />
 
@@ -87,7 +86,7 @@
 						<a href="./index.html" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
 					</div>
 					<div style="text-align:center; margin: 5px 115px 0px 115px; padding-top:10px;border:5px solid #abc; border-radius:12px;background-color:#fff">
-						<img src="images/bethisrael_newark_logo.jpg"/>
+						<img src="images/bethisrael_logo2.jpg"/>
 					</div>
 
 					<div data-role="content">
@@ -166,7 +165,7 @@
 						=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 						Here is a cool mockup, I'd recommend using wherever possible...
 						=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-						<div>
+<div>
 						<select name="select-choice-9" id="select-choice-9" multiple="multiple" data-native-menu="false">
 						<option>Cancer</option>
 						<option value="cancer_father">Father</option>
@@ -175,143 +174,163 @@
 						<option value="cancer_sister">Sister</option>
 						</select>
 						</div>
+
 						-->
 
 						<fieldset data-role="controlgroup" data-type="horizontal">
 							<legend id="title207" class="desc">
 								Family History: <i>(check all that apply)</i>
 							</legend>
-
-							<div class="ui-block-a" data-role="collapsible" data-content-theme="a" data-iconpos="right" data-theme="b">
+		
+							<div class="FamHistoryParent" data-role="collapsible" data-content-theme="a" style="width:100% " data-iconpos="right" data-theme="a">
 								<h3>Cancer</h3>
-								<fieldset data-role="controlgroup" style="width:300px" data-type="vertical">
-									<input id="cancer_father" type="checkbox" value="Father" />
-									<label for="cancer_father" class="choice">Father</label>
-									<input id="cancer_father_info" type="text" style="width:65%"/>
-									<input id="cancer_mother" type="checkbox" value="Mother" />
-									<label for="cancer_mother" class="choice">Mother</label>
-									<input id="cancer_mother_info" type="text" style="width:65%"/>
-									<input id="cancer_brother" type="checkbox" value="Brother" />
-									<label for="cancer_brother" class="choice">Brother</label>
-									<input id="cancer_brother_info" type="text" style="width:65%"/>
-									<input id="cancer_sister" type="checkbox" value="Sister" />
-									<label for="cancer_sister" class="choice">Sister</label>
-									<input id="cancer_sister_info" type="text" style="width:65%"/>
-									<input id="cancer_other" type="checkbox" value="Other" />
-									<label for="cancer_other">Other</label>
-									<input id="cancer_other_info" type="text" style="width:65%"/>
+
+								<fieldset class = "ui-grid-b" data-role="controlgroup" style="width:100% padding-left: 15px ">
+									<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px " data-type="vertical">
+										<input id="cancer_father" type="checkbox" value="Father" />
+										<label for="cancer_father" class="choice FamHistory">Father</label>
+										<input id="cancer_father_info" type="text" style="width:200px"/>
+										<input id="cancer_mother" type="checkbox" value="Mother" />
+										<label for="cancer_mother" class="choice FamHistory">Mother</label>
+										<input id="cancer_mother_info" type="text" style="width:200px"/>
+									</fieldset>
+									<fieldset class="ui-block-b" data-role="controlgroup" style="padding-left: 15px " data-type="vertical">
+										<input id="cancer_brother" type="checkbox" value="Brother" />
+										<label for="cancer_brother" class="choice FamHistory">Brother</label>
+										<input id="cancer_brother_info" type="text" style="width:200px"/>
+										<input id="cancer_sister" type="checkbox" value="Sister" />
+										<label for="cancer_sister" class="choice FamHistory">Sister</label>
+										<input id="cancer_sister_info" type="text"  style="width:200px" />
+									</fieldset>
+									<fieldset class="ui-block-c" data-role="controlgroup" style="padding-left: 15px " data-type="vertical">
+										<input id="cancer_other" type="checkbox" value="Other" />
+										<label for="cancer_other" class="choice FamHistory" >Other</label>
+										<input id="cancer_other_info" type="text" style="width:200px"/>
+									</fieldset>
 								</fieldset>
 							</div>
-
-							<div class="ui-block-a" data-role="collapsible" data-content-theme="a" data-iconpos="right" data-theme="b">
+						</fieldset>
+						<fieldset data-role="controlgroup" data-type="horizontal">
+							<div class="ui-block-a FamHistoryParent" data-role="collapsible" data-content-theme="a" data-iconpos="right" data-theme="a">
 								<h3>Heart Disease</h3>
-								<fieldset data-role="controlgroup" style="width:300px" data-type="vertical">
+								<fieldset data-role="controlgroup" style="width:300px padding-left: 15px" data-type="vertical">
 									<input id="heartdisease_father" type="checkbox" value="Father" class="field checkbox"/>
-									<label for="heartdisease_father" class="choice">Father</label>
+									<label for="heartdisease_father" class="choice FamHistory">Father</label>
 									<input type="text" style="width:65%"/>
 
 									<input id="heartdisease_mother" type="checkbox" value="Mother" class="field checkbox"/>
-									<label for="heartdisease_mother" class="choice">Mother</label>
+									<label for="heartdisease_mother" class="choice FamHistory">Mother</label>
 									<input type="text" style="width:65%"/>
 
 									<input id="heartdisease_brother" type="checkbox" value="Brother" class="field checkbox"/>
-									<label for="heartdisease_brother" class="choice">Brother</label>
+									<label for="heartdisease_brother" class="choice FamHistory">Brother</label>
 									<input type="text" style="width:65%"/>
 
 									<input id="heartdisease_sister" type="checkbox" value="Sister" class="field checkbox"/>
-									<label for="heartdisease_sister" class="choice">Sister</label>
+									<label for="heartdisease_sister" class="choice FamHistory">Sister</label>
 									<input type="text" style="width:65%"/>
 
 									<input id="heartdisease_other" type="checkbox" value="Other" class="field checkbox"/>
-									<label for="heartdisease_other" class="choice">Other</label>
+									<label for="heartdisease_other" class="choice FamHistory">Other</label>
 									<input type="text" style="width:65%"/>
 								</fieldset>
 							</div>
-							<div class="ui-block-a" data-role="collapsible" data-content-theme="a" data-iconpos="right" data-theme="b">
+						</fieldset>
+						<fieldset data-role="controlgroup" data-type="horizontal">
+							<div class="ui-block-b FamHistoryParent" data-role="collapsible" data-content-theme="a" data-iconpos="right" data-theme="a">
 								<h3>Diabetes</h3>
-								<fieldset data-role="controlgroup" style="width:300px" data-type="vertical">
+								<fieldset data-role="controlgroup" style="width:300px  padding-left: 15px" data-type="vertical">
 									<input id="diabetes_father" type="checkbox" value="Father" class="field checkbox"/>
-									<label for="diabetes_father" class="choice">Father</label>
+									<label for="diabetes_father" class="choice FamHistory">Father</label>
 									<input type="text" style="width:65%"/>
 
 									<input id="diabetes_mother" type="checkbox" value="Mother" class="field checkbox"/>
-									<label for="diabetes_mother" class="choice">Mother</label>
+									<label for="diabetes_mother" class="choice FamHistory">Mother</label>
 									<input type="text" style="width:65%"/>
 
 									<input id="diabetes_brother" type="checkbox" value="Brother" class="field checkbox"/>
-									<label for="diabetes_brother" class="choice">Brother</label>
+									<label for="diabetes_brother" class="choice FamHistory">Brother</label>
 									<input type="text" style="width:65%"/>
 
 									<input id="diabetes_sister" type="checkbox" value="Sister" class="field checkbox"/>
-									<label for="diabetes_sister" class="choice">Sister</label>
+									<label for="diabetes_sister" class="choice FamHistory">Sister</label>
 									<input type="text" style="width:65%"/>
 
 									<input id="diabetes_other" type="checkbox" value="Other" class="field checkbox"/>
-									<label for="diabetes_other" class="choice">Other</label>
+									<label for="diabetes_other" class="choice FamHistory">Other</label>
 									<input type="text" style="width:65%"/>
 								</fieldset>
 							</div>
-							<div class="ui-block-a" data-role="collapsible" data-content-theme="a" data-iconpos="right" data-theme="b">
+						</fieldset>
+
+
+						
+						<fieldset data-role="controlgroup" data-type="horizontal">
+							<div class="ui-block-b FamHistoryParent" data-role="collapsible" data-content-theme="a" data-iconpos="right" data-theme="a">
 								<h3>High Cholesterol</h3>
-								<fieldset data-role="controlgroup" style="width:300px" data-type="vertical">
+								<fieldset data-role="controlgroup" style="width:300px padding-left: 15px" data-type="vertical">
 									<input id="highcholesterol_father" type="checkbox" value="Father" class="field checkbox"/>
-									<label for="highcholesterol_father" class="choice">Father</label>
+									<label for="highcholesterol_father" class="choice FamHistory">Father</label>
 									<input type="text" style="width:65%"/>
 
 									<input id="highcholesterol_mother" type="checkbox" value="Mother" class="field checkbox"/>
-									<label for="highcholesterol_mother" class="choice">Mother</label>
+									<label for="highcholesterol_mother" class="choice FamHistory">Mother</label>
 									<input type="text" style="width:65%"/>
 
 									<input id="highcholesterol_brother" type="checkbox" value="Brother" class="field checkbox"/>
-									<label for="highcholesterol_brother" class="choice">Brother</label>
+									<label for="highcholesterol_brother" class="choice FamHistory">Brother</label>
 									<input type="text" style="width:65%"/>
 
 									<input id="highcholesterol_sister" type="checkbox" value="Sister" class="field checkbox"/>
-									<label for="highcholesterol_sister" class="choice">Sister</label>
+									<label for="highcholesterol_sister" class="choice FamHistory">Sister</label>
 									<input type="text" style="width:65%"/>
 
 									<input id="highcholesterol_other" type="checkbox" value="Other" class="field checkbox"/>
-									<label for="highcholesterol_other" class="choice">Other</label>
+									<label for="highcholesterol_other" class="choice FamHistory">Other</label>
 									<input type="text" style="width:65%"/>
 								</fieldset>
 							</div>
-							<div class="ui-block-a" data-role="collapsible" data-content-theme="a" data-iconpos="right" data-theme="b">
+						</fieldset>
+						<fieldset data-role="controlgroup" data-type="horizontal">
+							<div class="ui-block-c FamHistoryParent" data-role="collapsible" data-content-theme="a" data-iconpos="right" data-theme="a">
 								<h3>High Blood Pressure</h3>
-								<fieldset data-role="controlgroup" style="width:300px" data-type="vertical">
+								<fieldset data-role="controlgroup" style="width:300px padding-left: 15px" data-type="vertical">
 									<input id="highbloodpressure_father" type="checkbox" value="Father" class="field checkbox"/>
-									<label for="highbloodpressure_father" class="choice">Father</label>
+									<label for="highbloodpressure_father" class="choice FamHistory">Father</label>
 									<input type="text" style="width:65%"/>
 									<input id="highbloodpressure_mother" type="checkbox" value="Mother" class="field checkbox"/>
-									<label for="highbloodpressure_mother" class="choice">Mother</label>
+									<label for="highbloodpressure_mother" class="choice FamHistory">Mother</label>
 									<input type="text" style="width:65%"/>
 									<input id="highbloodpressure_brother" type="checkbox" value="Brother" class="field checkbox"/>
-									<label for="highbloodpressure_brother" class="choice">Brother</label>
+									<label for="highbloodpressure_brother" class="choice FamHistory">Brother</label>
 									<input type="text" style="width:65%"/>
 									<input id="highbloodpressure_sister" type="checkbox" value="Sister" class="field checkbox"/>
-									<label for="highbloodpressure_sister" class="choice">Sister</label>
+									<label for="highbloodpressure_sister" class="choice FamHistory">Sister</label>
 									<input type="text" style="width:65%"/>
 									<input id="highbloodpressure_other" type="checkbox" value="Other" class="field checkbox"/>
-									<label for="highbloodpressure_other" class="choice">Other</label>
+									<label for="highbloodpressure_other" class="choice FamHistory">Other</label>
 									<input type="text" style="width:65%"/>
 								</fieldset>
 							</div>
-							<div data-role="collapsible" data-content-theme="a" data-iconpos="right" data-theme="b">
+						</fieldset>
+						<fieldset data-role="controlgroup" data-type="horizontal">
+							<div class="ui-block-c FamHistoryParent" data-role="collapsible" data-content-theme="a" data-iconpos="right" data-theme="a">
 								<h3>Other:</h3>
-								<fieldset data-role="controlgroup" style="width:300px" data-type="vertical">
+								<fieldset data-role="controlgroup" style="width:300px padding-left: 15px" data-type="vertical">
 									<input id="other_father" type="checkbox" value="Father" class="field checkbox"/>
-									<label for="other_father" class="choice">Father</label>
+									<label for="other_father" class="choice FamHistory">Father</label>
 									<input type="text" style="width:65%"/>
 									<input id="other_mother" type="checkbox" value="Mother" class="field checkbox"/>
-									<label for="other_mother" class="choice">Mother</label>
+									<label for="other_mother" class="choice FamHistory">Mother</label>
 									<input type="text" style="width:65%"/>
 									<input id="other_brother" type="checkbox" value="Brother" class="field checkbox"/>
-									<label for="other_brother" class="choice">Brother</label>
+									<label for="other_brother" class="choice FamHistory">Brother</label>
 									<input type="text" style="width:65%"/>
 									<input id="other_sister" type="checkbox" value="Sister" class="field checkbox"/>
-									<label for="other_sister" class="choice">Sister</label>
+									<label for="other_sister" class="choice FamHistory">Sister</label>
 									<input type="text" style="width:65%"/>
 									<input id="other_other" type="checkbox" value="Other" class="field checkbox"/>
-									<label for="other_other" class="choice">Other</label>
+									<label for="other_other" class="choice FamHistory">Other</label>
 									<input type="text" style="width:65%"/>
 								</fieldset>
 							</div>
