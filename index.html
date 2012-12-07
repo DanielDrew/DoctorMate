@@ -566,26 +566,29 @@
 							</div>
 						</fieldset> -->
 
-						<fieldset data-role="controlgroup" data-type="horizontal">
+						<!-- <fieldset data-role="controlgroup" data-type="vertical">
 							<legend id="title7" class="desc">
 								PMH: <i>(check if positive)</i>
 							</legend>
+
+
 
 							<span>
 								<input id="pmh_aids" type="checkbox" value="AIDS" class="field checkbox" />
 								<label class="choice" for="pmh_aids">AIDS</label>
 								<input id="pmh_aids_txt" type="text"/>
-								<script>
-									$('#pmh_aids_txt').hide();
-									$('#pmh_aids').click(function() {
-										var checked_status = this.checked;
-										if (checked_status == true) {
-											$('#pmh_aids_txt').show();
-										} else {
-											$('#pmh_aids_txt').hide();
-										}
-									});
-								</script> </span>
+								// <script>
+								// 	$('#pmh_aids_txt').hide();
+								// 	$('#pmh_aids').click(function() {
+								// 		var checked_status = this.checked;
+								// 		if (checked_status == true) {
+								// 			$('#pmh_aids_txt').show();
+								// 		} else {
+								// 			$('#pmh_aids_txt').hide();
+								// 		}
+								// 	});
+								// </script>
+							</span>
 
 							<span>
 								<input id="pmh_anemia" type="checkbox" value="Anemia" class="field checkbox" />
@@ -729,8 +732,116 @@
 								<input id="pmh_other_txt" type="text" class="field text fn" value="" size="20" />
 							</span>
 
-						</fieldset>
+						</fieldset> -->
+<legend id="title7" class="desc">
+								PMH: <i>(check if positive)</i>
+							</legend>
+					    <ul data-role="listview">
+					        <li>
+					        	<fieldset data-role="controlgroup" data-type="vertical">
 
+
+
+
+							<span>
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+									<input id="pmh_aids" type="checkbox" value="AIDS" class="field checkbox" />
+									<label class="choice" for="pmh_aids" style = "width: 150px">AIDS</label>
+								</fieldset>
+								<input class = "ui-block-b" id="pmh_aids_txt" type="text" style = "width: 75%; line-height: 30px" />
+								
+							</span>					        	
+					        </li>
+					        <li>
+					    	<span>
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+								<input id="pmh_anemia" type="checkbox" value="Anemia" class="field checkbox" />
+								<label class="choice" for="pmh_anemia"  style = "width: 150px">Anemia</label>
+								</fieldset>
+								<input id="pmh_anemia_txt" type="text" style = "width: 75%; line-height: 30px" />
+					        </li>
+					        <li>
+					    	<span>
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+								<input id="pmh_bleeding" type="checkbox" value="Bleeding Disorder" class="field checkbox" />
+								<label class="choice" for="pmh_bleeding"  style = "width: 150px">Bleeding Disorders</label>
+								</fieldset>
+								<input id="pmh_bleeding_txt" type="text" style = "width: 75%; line-height: 30px" />
+							</span>
+					        </li>
+					        <li>
+					    	<span>
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+								<input id="pmh_cancer" type="checkbox" value="Cancer" class="field checkbox" />
+								<label class="choice" for="pmh_cancer"  style = "width: 150px">Cancer</label>
+								</fieldset>
+								<input id="pmh_cancer_txt" type="text" style = "width: 75%; line-height: 30px" />
+								</span>
+					        </li>
+					        <li>
+					    	<span>
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+								<input id="pmh_diabetes" type="checkbox" value="Diabetes" class="field checkbox" />
+								<label class="choice" for="pmh_diabetes"  style = "width: 150px">Diabetes</label>
+								</fieldset>
+								<input id="pmh_diabetes_txt" type="text" style = "width: 75%; line-height: 30px" />
+								</span>
+					        </li>
+					        <li>
+					    	<span>
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+								<input id="pmh_Hepatitis" type="checkbox" value="Hepatitis" class="field checkbox" />
+								<label class="choice" for="pmh_Hepatitis"  style = "width: 150px">Hepatitis</label>
+								</fieldset>
+								<input id="pmh_Hepatitis_txt" type="text" style = "width: 75%; line-height: 30px" />
+								</span>
+					        </li>
+					        <li>
+					    	<span>
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+								<input id="pmh_heartDisease" type="checkbox" value="Heart Disease" class="field checkbox" />
+								<label class="choice" for="pmh_heartDisease"  style = "width: 150px">Heart Disease</label>
+								</fieldset>
+								<input id="pmh_heartDisease_txt" type="text" style = "width: 75%; line-height: 30px" />
+								</span>
+					        </li>
+					        <li>
+					    	<span>
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+								<input id="pmh_highCholesterol" type="checkbox" value="High Cholesterol" class="field checkbox" />
+								<label class="choice" for="pmh_highCholesterol"  style = "width: 150px">High Cholesterol</label>
+								</fieldset>
+								<input id="pmh_highCholesterol_txt" type="text" style = "width: 75%; line-height: 30px" />
+								</span>
+					        </li>
+					        <li>
+					    	<span>
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+								<input id="pmh_Pneumonia" type="checkbox" value="Pneumonia" class="field checkbox" />
+								<label class="choice" for="pmh_Pneumonia"  style = "width: 150px">Pneumonia</label>
+								</fieldset>
+								<input id="pmh_Pneumonia_txt" type="text" style = "width: 75%; line-height: 30px" />
+								</span>
+					        </li>
+					        <li>
+					    	<span>
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+								<input id="pmh_TB" type="checkbox" value="TB" class="field checkbox" />
+								<label class="choice" for="pmh_TB"  style = "width: 150px">TB</label>
+								</fieldset>
+								<input id="pmh_TB_txt" type="text" style = "width: 75%; line-height: 30px" />
+								</span>
+					        </li>
+					        <li>
+					    	<span>
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+								<input id="pmh_Others" type="checkbox" value="Others" class="field checkbox" />
+								<label class="choice" for="pmh_Others"  style = "width: 150px">Others</label>
+								</fieldset>
+								<input id="pmh_Others_txt" type="text" style = "width: 75%; line-height: 30px" />
+								</span>
+					        </li>					        					        					        
+					    </ul>
 						<label class="desc" id="title4" for="Field4"> Please list any medication allergies that you have : </label>
 						<textarea id="Field4" name="Field4" class="field textarea medium" spellcheck="true" rows="10" cols="50" onkeyup="" ></textarea>
 						<label class="desc" id="title306" for="Field306"> Please list any medications you are currently taking (and dosage if known) : </label>
