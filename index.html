@@ -178,67 +178,262 @@
 
 						-->
 
-<!-- 						<div data-role="collapsible-set">
-							<div data-role="collapsible" data-collapsed="false">
-								<h3>Section 1</h3>
-								<div>
-									content here
-								</div>
-							</div>
-
-							
-						</div>
-
- -->		
-						<div data-role="collapsible" data-theme="b" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-inset="true">
-						    <h2>Cancer</h2>
-						    <li data-role="fieldcontain" class="ui-listview">
-					    		<!-- <input class="" id="cancer_father" type="checkbox" value="Father" /> -->
-					    		<input id="cancer_fatherTest" class="ui-body-a" type="checkbox" value="Father" />
-							    <label for="cancer_fatherTest" style= "width: 25%" class="ui-body-a choice FamHistory">Father</label>
-							    <input type="text" class="ui-body-b" name = "cancer_fatherTest" style= "width: 25%"  id="cancer_fatherTest" >
-						    	<div class="ui-body-b">
-								 	
-								</div>
-						    </li>
-						</div><!-- /collapsible -->
-
 						<fieldset data-role="controlgroup" data-type="horizontal">
 							<legend id="title207" class="desc">
 								Family History: <i>(check all that apply)</i>
 							</legend>
-
-							<div class="FamHistoryParent" data-role="collapsible" data-iconpos="right" data-theme="a">
-								<h3>Cancer</h3>
-
-									<fieldset class="ui-block-b" data-role="controlgroup" style="padding-left: 15px " data-type="vertical">
-										<input id="cancer_father" type="checkbox" value="Father" />
-										<label for="cancer_father" style= "width: 100px" class="choice FamHistory">Father</label>
-										<input id="cancer_father_info" type="text" style="width:240px"/>
-
-										<input id="cancer_mother" type="checkbox" value="Mother" />
-										<label for="cancer_mother"  style= "width: 100px" class="choice FamHistory">Mother</label>
-										<input id="cancer_mother_info" type="text" style="width:240px"/>
-									</fieldset>
-									<fieldset class="ui-block-c" data-role="controlgroup" style="padding-left: 15px " data-type="vertical">
-										<input id="cancer_brother" type="checkbox" value="Brother" />
-										<label for="cancer_brother" style= "width: 100px" class="choice FamHistory">Brother</label>
-										<input id="cancer_brother_info" type="text" style="width:240px"/>
-
-										<input id="cancer_sister" type="checkbox" value="Sister" />
-										<label for="cancer_sister"  style= "width: 100px" class="choice FamHistory">Sister  </label>
-										<input id="cancer_sister_info" type="text"  style="width:240px" />
-									</fieldset>
-									<fieldset class="ui-block-d" data-role="controlgroup" style="padding-left: 15px " data-type="vertical">
-										<input id="cancer_other" type="checkbox" value="Other" />
-										<label for="cancer_other" style= "width: 100px" class="choice FamHistory" style: "width: 100px" >Other</label>
-										<input id="cancer_other_info" type="text" style="width:240px"/>
-
-									</fieldset>
-							</div>
 						</fieldset>
+						<div data-role="collapsible" data-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-inset="false" >
+							<h2>Cancer</h2>
+						    <li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
 
-					
+									<input id="Cancer_father" type="checkbox" value="Father" class="field checkbox"/>
+									<label for="Cancer_father" style= "width: 100px; margin-top: 15px" class="choice FamHistory">Father</label>
+								</fieldset>
+									<input type="text" class="ui-block-b" id="Cancer_father_info" style="width:65%; line-height: 30px; margin-top: 15px"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+									<input id="Cancer_mother" type="checkbox" value="Mother" class="field checkbox"/>
+									<label for="Cancer_mother" style= "width: 100px" class="choice FamHistory">Mother</label>
+								</fieldset>
+									<input type="text" style="width:65%; line-height: 30px"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+									<input id="Cancer_brother" type="checkbox" value="Brother" class="field checkbox"/>
+									<label for="Cancer_brother" style= "width: 100px" class="choice FamHistory">Brother</label>
+								</fieldset>
+									<input id="Cancer_brother_info" type="text" style="width:65%; line-height: 30px; "/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+									<input id="Cancer_sister" type="checkbox" value="Sister" class="field checkbox"/>
+									<label for="Cancer_sister" style= "width: 100px" class="choice FamHistory">Sister</label>
+								</fieldset>
+									<input type="text" id="Cancer_sister_info" style="width:65%; line-height: 30px"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+
+									<input id="Cancer_other" type="checkbox" value="Other" class="field checkbox"/>
+									<label for="Cancer_other" style= "width: 100px" class="choice FamHistory">Other</label>
+								</fieldset>
+
+									<input type="text" id="Cancer_other_info" style="width:65%; line-height: 30px; margin-bottom: 15px"/>
+							</li>
+						</div>
+
+
+						
+						<div data-role="collapsible" data-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-inset="false" >
+							<h2>Heart Disease</h2>
+						    <li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+
+									<input id="heartdisease_father" type="checkbox" value="Father" class="field checkbox"/>
+									<label for="heartdisease_father" style= "width: 100px; margin-top: 15px" class="choice FamHistory">Father</label>
+								</fieldset>
+									<input type="text" class="ui-block-b" id="heartDisease_father_info" style="width:65%; line-height: 30px; margin-top: 15px"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+									<input id="heartdisease_mother" type="checkbox" value="Mother" class="field checkbox"/>
+									<label for="heartdisease_mother" style= "width: 100px" class="choice FamHistory">Mother</label>
+								</fieldset>
+									<input type="text" style="width:65%; line-height: 30px"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+									<input id="heartdisease_brother" type="checkbox" value="Brother" class="field checkbox"/>
+									<label for="heartdisease_brother" style= "width: 100px" class="choice FamHistory">Brother</label>
+								</fieldset>
+									<input id="heartdisease_brother_info" type="text" style="width:65%; line-height: 30px"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+									<input id="heartdisease_sister" type="checkbox" value="Sister" class="field checkbox"/>
+									<label for="heartdisease_sister" style= "width: 100px" class="choice FamHistory">Sister</label>
+								</fieldset>
+									<input type="text" id="heartdisease_sister_info" style="width:65%; line-height: 30px"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+
+									<input id="heartdisease_other" type="checkbox" value="Other" class="field checkbox"/>
+									<label for="heartdisease_other" style= "width: 100px" class="choice FamHistory">Other</label>
+								</fieldset>
+
+									<input type="text" id="heartdisease_other_info" style="width:65%; line-height: 30px; margin-bottom: 15px"/>
+							</li>
+						</div>
+						<div data-role="collapsible" data-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-inset="false" >
+							<h2>Diabetes</h2>
+						    <li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+
+									<input id="diabetes_father" type="checkbox" value="Father" class="field checkbox"/>
+									<label for="diabetes_father" style= "width: 100px; margin-top: 15px" class="choice FamHistory">Father</label>
+								</fieldset>
+									<input type="text" class="ui-block-b" id="diabetes_father_info" style="width:65%; line-height: 30px; margin-top: 15px"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+									<input id="diabetes_mother" type="checkbox" value="Mother" class="field checkbox"/>
+									<label for="diabetes_mother" style= "width: 100px" class="choice FamHistory">Mother</label>
+								</fieldset>
+									<input type="text" style="width:65%; line-height: 30px"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+									<input id="diabetes_brother" type="checkbox" value="Brother" class="field checkbox"/>
+									<label for="diabetes_brother" style= "width: 100px" class="choice FamHistory">Brother</label>
+								</fieldset>
+									<input id="diabetes_brother_info" type="text" style="width:65%; line-height: 30px"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+									<input id="diabetes_sister" type="checkbox" value="Sister" class="field checkbox"/>
+									<label for="diabetes_sister" style= "width: 100px" class="choice FamHistory">Sister</label>
+								</fieldset>
+									<input type="text" id="diabetes_sister_info" style="width:65%; line-height: 30px"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+
+									<input id="diabetes_other" type="checkbox" value="Other" class="field checkbox"/>
+									<label for="diabetes_other" style= "width: 100px" class="choice FamHistory">Other</label>
+								</fieldset>
+
+									<input type="text" id="diabetes_other_info" style="width:65%; line-height: 30px; margin-bottom: 15px"/>
+							</li>
+						</div>
+						<div data-role="collapsible" data-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-inset="false" >
+							<h2>High Colesterol</h2>
+						    <li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+
+									<input id="highcholesterol_father" type="checkbox" value="Father" class="field checkbox"/>
+									<label for="highcholesterol_father" style= "width: 100px; margin-top: 15px" class="choice FamHistory">Father</label>
+								</fieldset>
+									<input type="text" class="ui-block-b" id="highcholesterol_father_info" style="width:65%; line-height: 30px; margin-top: 15px"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+									<input id="highcholesterol_mother" type="checkbox" value="Mother" class="field checkbox"/>
+									<label for="highcholesterol_mother" style= "width: 100px" class="choice FamHistory">Mother</label>
+								</fieldset>
+									<input type="text" style="width:65%; line-height: 30px"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+									<input id="highcholesterol_brother" type="checkbox" value="Brother" class="field checkbox"/>
+									<label for="highcholesterol_brother" style= "width: 100px" class="choice FamHistory">Brother</label>
+								</fieldset>
+									<input id="highcholesterol_brother_info" type="text" style="width:65%; line-height: 30px"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+									<input id="highcholesterol_sister" type="checkbox" value="Sister" class="field checkbox"/>
+									<label for="highcholesterol_sister" style= "width: 100px" class="choice FamHistory">Sister</label>
+								</fieldset>
+									<input type="text" id="highcholesterol_sister_info" style="width:65%; line-height: 30px"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+
+									<input id="highcholesterol_other" type="checkbox" value="Other" class="field checkbox"/>
+									<label for="highcholesterol_other" style= "width: 100px" class="choice FamHistory">Other</label>
+								</fieldset>
+
+									<input type="text" id="highcholesterol_other_info" style="width:65%; line-height: 30px; margin-bottom: 15px"/>
+							</li>
+						</div>
+						<div data-role="collapsible" data-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-inset="false" >
+							<h2>High Blood Pressure</h2>
+						    <li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+
+									<input id="highBloodPressure_father" type="checkbox" value="Father" class="field checkbox"/>
+									<label for="highBloodPressure_father" style= "width: 100px; margin-top: 15px" class="choice FamHistory">Father</label>
+								</fieldset>
+									<input type="text" class="ui-block-b" id="highBloodPressure_father_info" style="width:65%; line-height: 30px; margin-top: 15px"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+									<input id="highBloodPressure_mother" type="checkbox" value="Mother" class="field checkbox"/>
+									<label for="highBloodPressure_mother" style= "width: 100px" class="choice FamHistory">Mother</label>
+								</fieldset>
+									<input type="text" style="width:65%; line-height: 30px"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+									<input id="highBloodPressure_brother" type="checkbox" value="Brother" class="field checkbox"/>
+									<label for="highBloodPressure_brother" style= "width: 100px" class="choice FamHistory">Brother</label>
+								</fieldset>
+									<input id="highBloodPressure_brother_info" type="text" style="width:65%; line-height: 30px"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+									<input id="highBloodPressure_sister" type="checkbox" value="Sister" class="field checkbox"/>
+									<label for="highBloodPressure_sister" style= "width: 100px" class="choice FamHistory">Sister</label>
+								</fieldset>
+									<input type="text" id="highBloodPressure_sister_info" style="width:65%; line-height: 30px"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+
+									<input id="highBloodPressure_other" type="checkbox" value="Other" class="field checkbox"/>
+									<label for="highBloodPressure_other" style= "width: 100px" class="choice FamHistory">Other</label>
+								</fieldset>
+
+									<input type="text" id="highBloodPressure_other_info" style="width:65%; line-height: 30px; margin-bottom: 15px"/>
+							</li>
+						</div>
+						<div data-role="collapsible" data-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-inset="false" >
+							<h2>Other</h2>
+						    <li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+
+									<input id="other_father" type="checkbox" value="Father" class="field checkbox"/>
+									<label for="other_father" style= "width: 100px; margin-top: 15px" class="choice FamHistory">Father</label>
+								</fieldset>
+									<input type="text" class="ui-block-b" id="other_father_info" style="width:65%; line-height: 30px; margin-top: 15px"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+									<input id="other_mother" type="checkbox" value="Mother" class="field checkbox"/>
+									<label for="other_mother" style= "width: 100px" class="choice FamHistory">Mother</label>
+								</fieldset>
+									<input type="text" style="width:65%; line-height: 30px"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+									<input id="other_brother" type="checkbox" value="Brother" class="field checkbox"/>
+									<label for="other_brother" style= "width: 100px" class="choice FamHistory">Brother</label>
+								</fieldset>
+									<input id="other_brother_info" type="text" style="width:65%; line-height: 30px"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+									<input id="other_sister" type="checkbox" value="Sister" class="field checkbox"/>
+									<label for="other_sister" style= "width: 100px" class="choice FamHistory">Sister</label>
+								</fieldset>
+									<input type="text" id="other_sister_info" style="width:65%; line-height: 30px"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+
+									<input id="other_other" type="checkbox" value="Other" class="field checkbox"/>
+									<label for="other_other" style= "width: 100px" class="choice FamHistory">Other</label>
+								</fieldset>
+
+									<input type="text" id="other_other_info" style="width:65%; line-height: 30px; margin-bottom: 15px"/>
+							</li>
+						</div>
+
+<!-- 										
 
 						<fieldset data-role="controlgroup" data-type="horizontal">
 							<div class="ui-block-a FamHistoryParent" data-role="collapsible" data-iconpos="right" data-theme="a">
@@ -247,7 +442,7 @@
 
 									<input id="heartdisease_father" type="checkbox" value="Father" class="field checkbox"/>
 									<label for="heartdisease_father" style= "width: 100px" class="choice FamHistory">Father</label>
-									<input type="text" style="width:65%"/>
+									<input type="text" style="width:65%; line-height: 30px"/>
 
 									<input id="heartdisease_mother" type="checkbox" value="Mother" class="field checkbox"/>
 									<label for="heartdisease_mother" style= "width: 100px" class="choice FamHistory">Mother</label>
@@ -266,7 +461,7 @@
 
 									<input id="heartdisease_other" type="checkbox" value="Other" class="field checkbox"/>
 									<label for="heartdisease_other" style= "width: 100px" class="choice FamHistory">Other</label>
-									<input type="text" style="width:65%"/>
+									<input type="text" style="width:65% padding-bottom: 10px"/>
 								</fieldset>
 							</div>
 						</fieldset>
@@ -368,7 +563,7 @@
 									<input type="text" style="width:65%"/>
 								</fieldset>
 							</div>
-						</fieldset>
+						</fieldset> -->
 
 						<fieldset data-role="controlgroup" data-type="horizontal">
 							<legend id="title7" class="desc">
