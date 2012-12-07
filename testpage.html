@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CardioBerry</title>
+		<meta name="x-blackberry-defaultHoverEffect" content="false" />
+		<meta name="viewport" content="initial-scale=1.0,width=device-width,user-scalable=no,target-densitydpi=device-dpi" />
+
+		<link href="css/jquery.mobile-1.2.0-alpha.1.min.css" rel="stylesheet" />
+		<link href="css/app.css" rel="stylesheet" />
+
+		<script src="js/jquery-1.7.2.min.js"></script>
+		<script src="js/jquery.mobile-1.2.0-alpha.1.min.js"></script>
+		<script src="js/jSignature.min.js"></script>
+		<script src="js/jSignature.SignHere.js"></script>
+		<script src="js/json2.js"></script>
+		<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=2"></' + 'script>')</script>
+	</head>
+
+	<body onload="app.init()">
+		<div id="myPage" data-role="none" style="visibility:hidden">
+
+			<form id="form65" name="form65" class="wufoo topLabel page" autocomplete="off" enctype="multipart/form-data" method="post" novalidate action="complete.html">
+
+				<!-- Signature -->
+				<!-- NOTE: This needs to be created first, though it doesn't need to be default. -->
+				<div data-role="page" data-title="Signature" id="signoff" data-theme="a">
+					<div data-role="header" data-position="fixed" data-id="foo">
+						<h1 id="logo"> Signature </h1>
+						<a href="./index.html" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+					</div>
+
+
+					<div data-role="footer" data-id="nav" data-position="fixed">
+						<div data-role="navbar">
+							<ul>
+								<li>
+									<a href="#patient">Patient Info</a>
+								</li>
+								<li>
+									<a href="#history">History</a>
+								</li>
+								<li>
+									<a href="#systems">Systems</a>
+								</li>
+								<li>
+									<a href="#diagnostics">Diagnostics</a>
+								</li>
+								<li>
+									<a href="#signoff"  class="ui-btn-active ui-state-persist">Signatures</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- Patient page -->
+				<div data-role="page" data-title="Patient Info" id="patient" data-theme="a">
+				<div data-role="collapsible" data-theme="b" data-content-theme="d" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-inset="false">
+				    <h2>Cancer</h2>
+				    <ul data-role="listview">
+				        <li>
+				        	
+				        </li>
+				        <li><a href="#">Cat</a></li>
+				        <li><a href="#">Dog</a></li>
+				        <li><a href="#">Gerbil</a></li>
+				        <li><a href="#">Iguana</a></li>
+				        <li><a href="#">Mouse</a></li>
+				    </ul>
+				</div><!-- /collapsible -->
+				<div data-role="collapsible" data-theme="b" data-content-theme="d" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-inset="false">
+				    <h2>Farm animals</h2>
+				    <ul data-role="listview">
+				        <li><a href="#">Chicken</a></li>
+				        <li><a href="#">Cow</a></li>
+				        <li><a href="#">Duck</a></li>
+				        <li><a href="#">Horse</a></li>
+				        <li><a href="#">Pig</a></li>
+				        <li><a href="#">Sheep</a></li>
+				    </ul>
+				</div><!-- /collapsible -->
+				<div data-role="collapsible" data-theme="b" data-content-theme="d" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-inset="false">
+				    <h2>Wild Animals</h2>
+				    <ul data-role="listview">
+				        <li><a href="#">Aardvark</a></li>
+				        <li><a href="#">Alligator</a></li>
+				        <li><a href="#">Ant</a></li>
+				        <li><a href="#">Bear</a></li>
+				        <li><a href="#">Beaver</a></li>
+				        <li><a href="#">Cougar</a></li>
+				        <li><a href="#">Dingo</a></li>
+				    </ul>
+				</div>
+
+
+
+
+						
+						<div data-role="collapsible" data-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-inset="false" >
+							<h2>Heart Disease</h2>
+						    <li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+
+									<input id="heartdisease_father" type="checkbox" value="Father" class="field checkbox"/>
+									<label for="heartdisease_father" style= "width: 100px" class="choice FamHistory">Father</label>
+								</fieldset>
+									<input type="text" class="ui-block-b" id="heartDisease_father_info" style="width:65%"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+									<input id="heartdisease_mother" type="checkbox" value="Mother" class="field checkbox"/>
+									<label for="heartdisease_mother" style= "width: 100px" class="choice FamHistory">Mother</label>
+								</fieldset>
+									<input type="text" style="width:65%"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+									<input id="heartdisease_brother" type="checkbox" value="Brother" class="field checkbox"/>
+									<label for="heartdisease_brother" style= "width: 100px" class="choice FamHistory">Brother</label>
+								</fieldset>
+									<input id="heartdisease_brother_info" type="text" style="width:65%"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+									<input id="heartdisease_sister" type="checkbox" value="Sister" class="field checkbox"/>
+									<label for="heartdisease_sister" style= "width: 100px" class="choice FamHistory">Sister</label>
+								</fieldset>
+									<input type="text" id="heartdisease_sister_info" style="width:65%"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview" style="padding-bottom: 10px">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+
+									<input id="heartdisease_other" type="checkbox" value="Other" class="field checkbox"/>
+									<label for="heartdisease_other" style= "width: 100px" class="choice FamHistory">Other</label>
+								</fieldset>
+
+									<input type="text" id="heartdisease_other_info" style="width:65%"/>
+							</li>
+						</div>
+						<div data-role="collapsible" data-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-inset="false" >
+							<h2>Heart Disease</h2>
+						    <li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+
+									<input id="heartdisease_father" type="checkbox" value="Father" class="field checkbox"/>
+									<label for="heartdisease_father" style= "width: 100px" class="choice FamHistory">Father</label>
+								</fieldset>
+									<input type="text" class="ui-block-b" id="heartDisease_father_info" style="width:65%"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+									<input id="heartdisease_mother" type="checkbox" value="Mother" class="field checkbox"/>
+									<label for="heartdisease_mother" style= "width: 100px" class="choice FamHistory">Mother</label>
+								</fieldset>
+									<input type="text" style="width:65%"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+									<input id="heartdisease_brother" type="checkbox" value="Brother" class="field checkbox"/>
+									<label for="heartdisease_brother" style= "width: 100px" class="choice FamHistory">Brother</label>
+								</fieldset>
+									<input id="heartdisease_brother_info" type="text" style="width:65%"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+									<input id="heartdisease_sister" type="checkbox" value="Sister" class="field checkbox"/>
+									<label for="heartdisease_sister" style= "width: 100px" class="choice FamHistory">Sister</label>
+								</fieldset>
+									<input type="text" id="heartdisease_sister_info" style="width:65%"/>
+							</li>
+							<li data-role="fieldcontain" class="ui-listview">
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+
+									<input id="heartdisease_other" type="checkbox" value="Other" class="field checkbox"/>
+									<label for="heartdisease_other" style= "width: 100px" class="choice FamHistory">Other</label>
+								</fieldset>
+
+									<input type="text" id="heartdisease_other_info" style="width:65%"/>
+							</li>
+						</div>
+				</div>
+
+				<!-- History page -->
+
+v						<textarea style="padding:0" id="Field4" name="Field4" class="field textarea small" spellcheck="true" rows="10" cols="50" onkeyup=""></textarea>																	
+		</form>
+		<script src="js/app.js"></script>
+
+	</body>
+</html>
