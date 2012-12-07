@@ -64,35 +64,31 @@ $.fn.clearForm = function() {
 $(".FamHistory").bind("click", function(){
 	var markParent = $(this).parent().children("input").is(":checked");  //To see the current state of this field if false then it is being turned on at this time
 	
-	var childrenChecked = $(".FamHistoryParent").children().has(this).children().children().children(".ui-checkbox").children("input:checked").length;
+	// var childrenChecked = $(".FamHistoryParent").children().has(this).children().children().children(".ui-checkbox").children("input:checked").length;
+	var childrenChecked = $(".famHistoryCollapse").has(this).children("div").children().children("fieldset").children().children().children("input:checked").length;
+	var isChecked = $(this).is(":checked");
 
 
-	if (!markParent){
+
+
+	
+	if (isChecked){
 		
 		//this section is is if it being turned on 
-
-
-		// var collapseParent = $(".FamHistoryParent").children().has(this).parent().children("h3").children("a");
-
-		// $(".FamHistoryParent").children().has(this)
-
-
-		//$(".FamHistoryParent").children().has(this).children().children().children(".ui-checkbox").children("input:checked")  This will return all of the checked true fields in this collapsing section
-
-		
-		if (childrenChecked >= 0){
-			//then mark parent as checked
-			$(this).parent().parent().parent().parent().parent().children().children("a").removeClass("ui-btn-up-a").addClass("ui-btn-up-b").data("theme", "b");
-		}else{
-			$(this).parent().parent().parent().parent().parent().children().children("a").removeClass("ui-btn-up-b").addClass("ui-btn-up-a").data("theme", "a");
-		}
+		$(".famHistoryCollapse").has(this).data("theme", "b");
+		// if (childrenChecked >= 0){
+		// 	//then mark parent as checked
+		// 	$(this).parent().parent().parent().parent().parent().children().children("a").removeClass("ui-btn-up-a").addClass("ui-btn-up-b").data("theme", "b");
+		// }else{
+		// 	$(this).parent().parent().parent().parent().parent().children().children("a").removeClass("ui-btn-up-b").addClass("ui-btn-up-a").data("theme", "a");
+		// }
 	}else{
 		//Turning the field off
 				if (childrenChecked > 1){
 			//then mark parent as checked
-			$(this).parent().parent().parent().parent().parent().children().children("a").removeClass("ui-btn-up-a").addClass("ui-btn-up-b").data("theme", "b");
+			$(".famHistoryCollapse").has(this).data("theme", "b");
 		}else{
-			$(this).parent().parent().parent().parent().parent().children().children("a").removeClass("ui-btn-up-b").addClass("ui-btn-up-a").data("theme", "a");
+			$(".famHistoryCollapse").has(this).data("theme", "a");
 		}
 
 	}
