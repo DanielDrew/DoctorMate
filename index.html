@@ -93,21 +93,21 @@
 					<div data-role="content">
 
 						<div data-role="fieldcontain">
-							<label for="patient_id">Patient ID</label>
+							<label for="patient_id" style="text-align:right; margin-right: 10px; padding-top: 5px">Patient ID</label>
 							<input id="patient_id" name="patient_id" type="text" value="" size="8" />
 							<input id="patient_UniqueIndex" name="patient_UniqueIndex" type="text" value="" size="8" />
-							<label for="pat_FirstName">First Name</label> </span>
+							<label for="pat_FirstName" style="text-align:right; margin-right: 10px; padding-top: 5px">First Name</label> </span>
 							<input id="pat_FirstName" name="pat_FirstName" type="text" value="" size="8" />
-							<label for="pat_LastName">Last Name</label> </span>
+							<label for="pat_LastName" style="text-align:right; margin-right: 10px; padding-top: 5px">Last Name</label> </span>
 							<input id="pat_LastName" name="pat_LastName" type="text" value="" size="14" />
-							<label class="desc" id="title2" for="pat_DOB"> Date of Birth </label>
+							<label class="desc" id="title2" for="pat_DOB" style="text-align:right; margin-right: 10px; padding-top: 5px"> Date of Birth </label>
 							<input id="pat_DOB" name="pat_DOB" type="date" value="" size="8" />
-							<label class="desc" id="patArrivalDate" for="pat_ArrivalDate"> Date of Arrival </label>
+							<label class="desc" id="patArrivalDate" for="pat_ArrivalDate" style="text-align:right; margin-right: 10px; padding-top: 5px"> Date of Arrival </label>
 							<input id="pat_ArrivalDate" name="pat_ArrivalDate" type="date" value="" size="8" />
 						</div>
 						<fieldset data-role="controlgroup" data-type="horizontal">
-							<a href="javascript:void(0)" style="width:49%" id="findPatient" data-role="button" data-icon="search"  data-mini="true">Find Patient</a>
-							<a href="javascript:void(0)" style="width:49%" id="clearPatient" data-role="button" data-icon="alert"  data-mini="true" >Clear and Load New Patient</a>
+							<a href="javascript:void(0)" style="width:48%" id="findPatient" data-role="button" data-icon="search"  style="margin: 0 auto;" data-mini="true">Find Patient</a>
+							<a href="javascript:void(0)" style="width:48%" id="clearPatient" data-role="button" data-icon="alert" style="margin: 0 auto;" data-mini="true" data-iconpos="right" >Clear and Load New Patient</a>
 						</fieldset>
 
 						<label id="title3" for="pat_chiefComplaint"> Chief Complaint: </label>
@@ -179,9 +179,12 @@
 						-->
 
 						<fieldset data-role="controlgroup" data-type="horizontal">
+							<input id = "famHistoryCollapseBtn" type="button" value="Collapse All" onClick="collapseHistory();" data-icon="minus" data-iconpos="left" data-mini="true" style="float: right;"/>
+								<input id="famHistoryExpandBtn" type="button" value="Expand All" onClick="expandHistory();" data-icon="plus" data-iconpos="right" data-mini="true" style="float: right;"/>							
 							<legend id="title207" class="desc">
-								Family History: <i>(check all that apply)</i>
+								Family History: <i>(check all that apply)</i>						
 							</legend>
+
 						</fieldset>
 
 							<div class="famHistoryCollapse" data-role="collapsible" data-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-inset="true" >
@@ -189,54 +192,51 @@
 							    <li data-role="fieldcontain" class="ui-listview">
 									<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
 
-										<input id="Cancer_father" type="checkbox" value="Father" class="field checkbox FamHistory"/>
-										<label for="Cancer_father" style= "width: 100px; margin-top: 15px" class="choice">Father</label>
+										<input id="cancer_father" type="checkbox" value="Father" class="field checkbox FamHistory"/>
+										<label for="cancer_father" style= "width: 100px; margin-top: 5px" class="choice">Father</label>
 									</fieldset>
-										<input type="text" class="ui-block-b" id="Cancer_father_info" style="width:65%; line-height: 30px; margin-top: 15px"/>
+										<input type="text" class="ui-block-b" id="cancer_father_info" style="width:65%; line-height: 30px; margin-top: 5px"/>
 								</li>
 								<li data-role="fieldcontain" class="ui-listview">
 									<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
-										<input id="Cancer_mother" type="checkbox" value="Mother" class="field checkbox FamHistory"/>
-										<label for="Cancer_mother" style= "width: 100px" class="choice">Mother</label>
+										<input id="cancer_mother" type="checkbox" value="Mother" class="field checkbox FamHistory"/>
+										<label for="cancer_mother" style= "width: 100px" class="choice">Mother</label>
 									</fieldset>
 										<input type="text" style="width:65%; line-height: 30px"/>
 								</li>
 								<li data-role="fieldcontain" class="ui-listview">
 									<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
-										<input id="Cancer_brother" type="checkbox" value="Brother" class="field checkbox FamHistory"/>
-										<label for="Cancer_brother" style= "width: 100px" class="choice">Brother</label>
+										<input id="cancer_brother" type="checkbox" value="Brother" class="field checkbox FamHistory"/>
+										<label for="cancer_brother" style= "width: 100px" class="choice">Brother</label>
 									</fieldset>
-										<input id="Cancer_brother_info" type="text" style="width:65%; line-height: 30px; "/>
+										<input id="cancer_brother_info" type="text" style="width:65%; line-height: 30px; "/>
 								</li>
 								<li data-role="fieldcontain" class="ui-listview">
 									<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
-										<input id="Cancer_sister" type="checkbox" value="Sister" class="field checkbox FamHistory"/>
-										<label for="Cancer_sister" style= "width: 100px" class="choice">Sister</label>
+										<input id="cancer_sister" type="checkbox" value="Sister" class="field checkbox FamHistory"/>
+										<label for="cancer_sister" style= "width: 100px" class="choice">Sister</label>
 									</fieldset>
-										<input type="text" id="Cancer_sister_info" style="width:65%; line-height: 30px"/>
+										<input type="text" id="cancer_sister_info" style="width:65%; line-height: 30px"/>
 								</li>
 								<li data-role="fieldcontain" class="ui-listview">
 									<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
 
-										<input id="Cancer_other" type="checkbox" value="Other" class="field checkbox FamHistory"/>
-										<label for="Cancer_other" style= "width: 100px" class="choice">Other</label>
+										<input id="cancer_other" type="checkbox" value="Other" class="field checkbox FamHistory"/>
+										<label for="cancer_other" style= "width: 100px" class="choice">Other</label>
 									</fieldset>
 
-										<input type="text" id="Cancer_other_info" style="width:65%; line-height: 30px; margin-bottom: 15px"/>
+										<input type="text" id="cancer_other_info" style="width:65%; line-height: 30px;"/>
 								</li>
 							</div>
-
-
-							
 							<div class="famHistoryCollapse" data-role="collapsible" data-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-inset="true" >
 								<h2>Heart Disease</h2>
 							    <li data-role="fieldcontain" class="ui-listview">
 									<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
 
 										<input id="heartdisease_father" type="checkbox" value="Father" class="field checkbox FamHistory"/>
-										<label for="heartdisease_father" style= "width: 100px; margin-top: 15px" class="choice">Father</label>
+										<label for="heartdisease_father" style= "width: 100px; margin-top: 5px" class="choice">Father</label>
 									</fieldset>
-										<input type="text" class="ui-block-b" id="heartDisease_father_info" style="width:65%; line-height: 30px; margin-top: 15px"/>
+										<input type="text" class="ui-block-b" id="heartDisease_father_info" style="width:65%; line-height: 30px; margin-top: 5px"/>
 								</li>
 								<li data-role="fieldcontain" class="ui-listview">
 									<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
@@ -266,7 +266,7 @@
 										<label for="heartdisease_other" style= "width: 100px" class="choice ">Other</label>
 									</fieldset>
 
-										<input type="text" id="heartdisease_other_info" style="width:65%; line-height: 30px; margin-bottom: 15px"/>
+										<input type="text" id="heartdisease_other_info" style="width:65%; line-height: 30px;"/>
 								</li>
 							</div>
 							<div class="famHistoryCollapse" data-role="collapsible" data-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-inset="true" >
@@ -275,9 +275,9 @@
 									<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
 
 										<input id="diabetes_father" type="checkbox" value="Father" class="field checkbox FamHistory"/>
-										<label for="diabetes_father" style= "width: 100px; margin-top: 15px" class="choice ">Father</label>
+										<label for="diabetes_father" style= "width: 100px; margin-top: 5px" class="choice ">Father</label>
 									</fieldset>
-										<input type="text" class="ui-block-b" id="diabetes_father_info" style="width:65%; line-height: 30px; margin-top: 15px"/>
+										<input type="text" class="ui-block-b" id="diabetes_father_info" style="width:65%; line-height: 30px; margin-top: 5px"/>
 								</li>
 								<li data-role="fieldcontain" class="ui-listview">
 									<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
@@ -307,18 +307,18 @@
 										<label for="diabetes_other" style= "width: 100px" class="choice ">Other</label>
 									</fieldset>
 
-										<input type="text" id="diabetes_other_info" style="width:65%; line-height: 30px; margin-bottom: 15px"/>
+										<input type="text" id="diabetes_other_info" style="width:65%; line-height: 30px;"/>
 								</li>
 							</div>
 							<div class="famHistoryCollapse" data-role="collapsible" data-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-inset="true" >
-								<h2>High Colesterol</h2>
+								<h2>High Cholesterol</h2>
 							    <li data-role="fieldcontain" class="ui-listview">
 									<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
 
 										<input id="highcholesterol_father" type="checkbox" value="Father" class="field checkbox FamHistory"/>
-										<label for="highcholesterol_father" style= "width: 100px; margin-top: 15px" class="choice ">Father</label>
+										<label for="highcholesterol_father" style= "width: 100px; margin-top: 5px" class="choice ">Father</label>
 									</fieldset>
-										<input type="text" class="ui-block-b" id="highcholesterol_father_info" style="width:65%; line-height: 30px; margin-top: 15px"/>
+										<input type="text" class="ui-block-b" id="highcholesterol_father_info" style="width:65%; line-height: 30px; margin-top: 5px"/>
 								</li>
 								<li data-role="fieldcontain" class="ui-listview">
 									<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
@@ -348,7 +348,7 @@
 										<label for="highcholesterol_other" style= "width: 100px" class="choice">Other</label>
 									</fieldset>
 
-										<input type="text" id="highcholesterol_other_info" style="width:65%; line-height: 30px; margin-bottom: 15px"/>
+										<input type="text" id="highcholesterol_other_info" style="width:65%; line-height: 30px"/>
 								</li>
 							</div>
 							<div class="famHistoryCollapse" data-role="collapsible" data-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-inset="true" >
@@ -357,9 +357,9 @@
 									<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
 
 										<input id="highBloodPressure_father" type="checkbox" value="Father" class="field checkbox FamHistory"/>
-										<label for="highBloodPressure_father" style= "width: 100px; margin-top: 15px" class="choice ">Father</label>
+										<label for="highBloodPressure_father" style= "width: 100px; margin-top: 5px" class="choice ">Father</label>
 									</fieldset>
-										<input type="text" class="ui-block-b" id="highBloodPressure_father_info" style="width:65%; line-height: 30px; margin-top: 15px"/>
+										<input type="text" class="ui-block-b" id="highBloodPressure_father_info" style="width:65%; line-height: 30px; margin-top: 5px"/>
 								</li>
 								<li data-role="fieldcontain" class="ui-listview">
 									<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
@@ -389,18 +389,17 @@
 										<label for="highBloodPressure_other" style= "width: 100px" class="choice">Other</label>
 									</fieldset>
 
-										<input type="text" id="highBloodPressure_other_info" style="width:65%; line-height: 30px; margin-bottom: 15px"/>
+										<input type="text" id="highBloodPressure_other_info" style="width:65%; line-height: 30px;"/>
 								</li>
 							</div>
 							<div class="famHistoryCollapse" data-role="collapsible" data-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-inset="true" >
 								<h2>Other</h2>
 							    <li data-role="fieldcontain" class="ui-listview">
 									<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
-
 										<input id="other_father" type="checkbox" value="Father" class="field checkbox FamHistory"/>
-										<label for="other_father" style= "width: 100px; margin-top: 15px" class="choice ">Father</label>
+										<label for="other_father" style= "width: 100px; margin-top: 5px" class="choice ">Father</label>
 									</fieldset>
-										<input type="text" class="ui-block-b" id="other_father_info" style="width:65%; line-height: 30px; margin-top: 15px"/>
+										<input type="text" class="ui-block-b" id="other_father_info" style="width:65%; line-height: 30px; margin-top: 5px"/>
 								</li>
 								<li data-role="fieldcontain" class="ui-listview">
 									<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
@@ -430,7 +429,7 @@
 										<label for="other_other" style= "width: 100px" class="choice">Other</label>
 									</fieldset>
 
-										<input type="text" id="other_other_info" style="width:65%; line-height: 30px; margin-bottom: 15px"/>
+										<input type="text" id="other_other_info" style="width:65%; line-height: 30px;"/>
 								</li>
 							</div>
 
@@ -492,6 +491,8 @@
 								</fieldset>
 							</div>
 						</fieldset>
+
+
 
 
 						
@@ -566,29 +567,130 @@
 							</div>
 						</fieldset> -->
 
-						<!-- <fieldset data-role="controlgroup" data-type="vertical">
+						<legend id="title7" class="desc" style="padding-bottom: 25px;">
+								PMH: <i>(check if positive)</i>
+							</legend>
+					    <ul data-role="listview" id = "pmh">
+					        <li style="padding: 0px; padding-left: 15px">
+							<span>
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+									<input id="pmh_aids" type="checkbox" value="AIDS" class="field checkbox"/>
+									<label class="choice" for="pmh_aids" style = "width: 200px">AIDS</label>
+								</fieldset>
+								<input id="pmh_aids_txt" type="text" style = "width: 75%; line-height: 30px" />
+								
+							</span>	
+					        </li>
+					        <li style="padding: 0px; padding-left: 15px">
+					    	<span>
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+								<input id="pmh_anemia" type="checkbox" value="Anemia" class="field checkbox" />
+								<label class="choice" for="pmh_anemia"  style = "width: 200px">Anemia</label>
+								</fieldset>
+								<input id="pmh_anemia_txt" type="text" style = "width: 75%; line-height: 30px" />
+					        </li>
+					        <li style="padding: 0px; padding-left: 15px">
+					    	<span>
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+								<input id="pmh_bleeding" type="checkbox" value="Bleeding Disorder" class="field checkbox" />
+								<label class="choice" for="pmh_bleeding"  style = "width: 200px;">Bleeding Disorders</label>
+								</fieldset>
+								<input id="pmh_bleeding_txt" type="text" style = "width: 75%; line-height: 30px" />
+							</span>
+					        </li>
+					        <li style="padding: 0px; padding-left: 15px">
+					    	<span>
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+								<input id="pmh_cancer" type="checkbox" value="Cancer" class="field checkbox" />
+								<label class="choice" for="pmh_cancer"  style = "width: 200px">Cancer</label>
+								</fieldset>
+								<input id="pmh_cancer_txt" type="text" style = "width: 75%; line-height: 30px" />
+								</span>
+					        </li>
+					        <li style= "padding: 0px; padding-left: 15px">
+					    	<span>
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+								<input id="pmh_diabetes" type="checkbox" value="Diabetes" class="field checkbox" />
+								<label class="choice" for="pmh_diabetes"  style = "width: 200px">Diabetes</label>
+								</fieldset>
+								<input id="pmh_diabetes_txt" type="text" style = "width: 75%; line-height: 30px" />
+								</span>
+					        </li>
+					        <li style= "padding: 0px; padding-left: 15px">
+					    	<span>
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+								<input id="pmh_Hepatitis" type="checkbox" value="Hepatitis" class="field checkbox" />
+								<label class="choice" for="pmh_Hepatitis"  style = "width: 200px">Hepatitis</label>
+								</fieldset>
+								<input id="pmh_Hepatitis_txt" type="text" style = "width: 75%; line-height: 30px" />
+								</span>
+					        </li>
+					        <li style= "padding: 0px; padding-left: 15px">
+					    	<span>
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+								<input id="pmh_heartDisease" type="checkbox" value="Heart Disease" class="field checkbox" />
+								<label class="choice" for="pmh_heartDisease"  style = "width: 200px">Heart Disease</label>
+								</fieldset>
+								<input id="pmh_heartDisease_txt" type="text" style = "width: 75%; line-height: 30px" />
+								</span>
+					        </li>
+					        <li style= "padding: 0px; padding-left: 15px">
+					    	<span>
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+								<input id="pmh_highCholesterol" type="checkbox" value="High Cholesterol" class="field checkbox" />
+								<label class="choice" for="pmh_highCholesterol"  style = "width: 200px">High Cholesterol</label>
+								</fieldset>
+								<input id="pmh_highCholesterol_txt" type="text" style = "width: 75%; line-height: 30px" />
+								</span>
+					        </li>
+					        <li style= "padding: 0px; padding-left: 15px">
+					    	<span>
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+								<input id="pmh_Pneumonia" type="checkbox" value="Pneumonia" class="field checkbox" />
+								<label class="choice" for="pmh_Pneumonia"  style = "width: 200px">Pneumonia</label>
+								</fieldset>
+								<input id="pmh_Pneumonia_txt" type="text" style = "width: 75%; line-height: 30px" />
+								</span>
+					        </li>
+					        <li style= "padding: 0px; padding-left: 15px">
+					    	<span>
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+								<input id="pmh_TB" type="checkbox" value="TB" class="field checkbox" />
+								<label class="choice" for="pmh_TB"  style = "width: 200px">TB</label>
+								</fieldset>
+								<input id="pmh_TB_txt" type="text" style = "width: 75%; line-height: 30px" />
+								</span>
+					        </li>
+					        <li style= "padding: 0px; padding-left: 15px; margin-bottom: 20px">
+					    	<span>
+								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
+								<input id="pmh_Others" type="checkbox" value="Others" class="field checkbox" style= "padding-left: 15px" />
+								<label class="choice" for="pmh_Others"  style = "width: 200px;">Others</label>
+								</fieldset>
+								<input id="pmh_Others_txt" type="text" style = "width: 75%; line-height: 30px;" />
+								</span>
+					        </li>					        					        					        
+					    </ul>
+						<!-- <fieldset data-role="controlgroup" data-type="horizontal">
 							<legend id="title7" class="desc">
 								PMH: <i>(check if positive)</i>
 							</legend>
-
-
 
 							<span>
 								<input id="pmh_aids" type="checkbox" value="AIDS" class="field checkbox" />
 								<label class="choice" for="pmh_aids">AIDS</label>
 								<input id="pmh_aids_txt" type="text"/>
-								// <script>
-								// 	$('#pmh_aids_txt').hide();
-								// 	$('#pmh_aids').click(function() {
-								// 		var checked_status = this.checked;
-								// 		if (checked_status == true) {
-								// 			$('#pmh_aids_txt').show();
-								// 		} else {
-								// 			$('#pmh_aids_txt').hide();
-								// 		}
-								// 	});
-								// </script>
-							</span>
+								<script>
+									$('#pmh_aids_txt').hide();
+									$('#pmh_aids').click(function() {
+										var checked_status = this.checked;
+										if (checked_status == true) {
+											$('#pmh_aids_txt').show();
+										} else {
+											$('#pmh_aids_txt').hide();
+										}
+									});
+								</script> </span>
 
 							<span>
 								<input id="pmh_anemia" type="checkbox" value="Anemia" class="field checkbox" />
@@ -733,115 +835,7 @@
 							</span>
 
 						</fieldset> -->
-<legend id="title7" class="desc">
-								PMH: <i>(check if positive)</i>
-							</legend>
-					    <ul data-role="listview">
-					        <li>
-					        	<fieldset data-role="controlgroup" data-type="vertical">
 
-
-
-
-							<span>
-								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
-									<input id="pmh_aids" type="checkbox" value="AIDS" class="field checkbox" />
-									<label class="choice" for="pmh_aids" style = "width: 150px">AIDS</label>
-								</fieldset>
-								<input class = "ui-block-b" id="pmh_aids_txt" type="text" style = "width: 75%; line-height: 30px" />
-								
-							</span>					        	
-					        </li>
-					        <li>
-					    	<span>
-								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
-								<input id="pmh_anemia" type="checkbox" value="Anemia" class="field checkbox" />
-								<label class="choice" for="pmh_anemia"  style = "width: 150px">Anemia</label>
-								</fieldset>
-								<input id="pmh_anemia_txt" type="text" style = "width: 75%; line-height: 30px" />
-					        </li>
-					        <li>
-					    	<span>
-								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
-								<input id="pmh_bleeding" type="checkbox" value="Bleeding Disorder" class="field checkbox" />
-								<label class="choice" for="pmh_bleeding"  style = "width: 150px">Bleeding Disorders</label>
-								</fieldset>
-								<input id="pmh_bleeding_txt" type="text" style = "width: 75%; line-height: 30px" />
-							</span>
-					        </li>
-					        <li>
-					    	<span>
-								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
-								<input id="pmh_cancer" type="checkbox" value="Cancer" class="field checkbox" />
-								<label class="choice" for="pmh_cancer"  style = "width: 150px">Cancer</label>
-								</fieldset>
-								<input id="pmh_cancer_txt" type="text" style = "width: 75%; line-height: 30px" />
-								</span>
-					        </li>
-					        <li>
-					    	<span>
-								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
-								<input id="pmh_diabetes" type="checkbox" value="Diabetes" class="field checkbox" />
-								<label class="choice" for="pmh_diabetes"  style = "width: 150px">Diabetes</label>
-								</fieldset>
-								<input id="pmh_diabetes_txt" type="text" style = "width: 75%; line-height: 30px" />
-								</span>
-					        </li>
-					        <li>
-					    	<span>
-								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
-								<input id="pmh_Hepatitis" type="checkbox" value="Hepatitis" class="field checkbox" />
-								<label class="choice" for="pmh_Hepatitis"  style = "width: 150px">Hepatitis</label>
-								</fieldset>
-								<input id="pmh_Hepatitis_txt" type="text" style = "width: 75%; line-height: 30px" />
-								</span>
-					        </li>
-					        <li>
-					    	<span>
-								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
-								<input id="pmh_heartDisease" type="checkbox" value="Heart Disease" class="field checkbox" />
-								<label class="choice" for="pmh_heartDisease"  style = "width: 150px">Heart Disease</label>
-								</fieldset>
-								<input id="pmh_heartDisease_txt" type="text" style = "width: 75%; line-height: 30px" />
-								</span>
-					        </li>
-					        <li>
-					    	<span>
-								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
-								<input id="pmh_highCholesterol" type="checkbox" value="High Cholesterol" class="field checkbox" />
-								<label class="choice" for="pmh_highCholesterol"  style = "width: 150px">High Cholesterol</label>
-								</fieldset>
-								<input id="pmh_highCholesterol_txt" type="text" style = "width: 75%; line-height: 30px" />
-								</span>
-					        </li>
-					        <li>
-					    	<span>
-								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
-								<input id="pmh_Pneumonia" type="checkbox" value="Pneumonia" class="field checkbox" />
-								<label class="choice" for="pmh_Pneumonia"  style = "width: 150px">Pneumonia</label>
-								</fieldset>
-								<input id="pmh_Pneumonia_txt" type="text" style = "width: 75%; line-height: 30px" />
-								</span>
-					        </li>
-					        <li>
-					    	<span>
-								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
-								<input id="pmh_TB" type="checkbox" value="TB" class="field checkbox" />
-								<label class="choice" for="pmh_TB"  style = "width: 150px">TB</label>
-								</fieldset>
-								<input id="pmh_TB_txt" type="text" style = "width: 75%; line-height: 30px" />
-								</span>
-					        </li>
-					        <li>
-					    	<span>
-								<fieldset class="ui-block-a" data-role="controlgroup" style="padding-left: 15px width: 100%" data-type="horizontal">
-								<input id="pmh_Others" type="checkbox" value="Others" class="field checkbox" />
-								<label class="choice" for="pmh_Others"  style = "width: 150px">Others</label>
-								</fieldset>
-								<input id="pmh_Others_txt" type="text" style = "width: 75%; line-height: 30px" />
-								</span>
-					        </li>					        					        					        
-					    </ul>
 						<label class="desc" id="title4" for="Field4"> Please list any medication allergies that you have : </label>
 						<textarea id="Field4" name="Field4" class="field textarea medium" spellcheck="true" rows="10" cols="50" onkeyup="" ></textarea>
 						<label class="desc" id="title306" for="Field306"> Please list any medications you are currently taking (and dosage if known) : </label>

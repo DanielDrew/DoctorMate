@@ -36,14 +36,63 @@ $(document).ready(function() {
 	$("#patient_UniqueIndex").hide();
 	$("#patient #history #systems #diagnostics #signatures").trigger( "create" );
 	$.mobile.ajaxLinksEnabled = false;
-	var mic = document.getElementById('mic');
-	mic.onfocus = mic.blur;
-	mic.onwebkitspeechchange = function(e) {
+	// var mic = document.getElementById('mic');
+	// mic.onfocus = mic.blur;
+	// mic.onwebkitspeechchange = function(e) {
     //console.log(e); // SpeechInputEvent
-    document.getElementById('pat_chiefComplaint').value = mic.value;
-};
+    // document.getElementById('pat_chiefComplaint').value = mic.value;
+// };
 
 });
+
+$(':radio').click(function(e){
+  var $self = $(this);
+  if( $self.is(':checked') ){
+   	$self.prop('checked', false);
+    }
+});
+
+$("input[type=checkbox]").bind("click", function(){
+	if ($(this).is(":checked")){
+		$(this).parents().siblings("[type=text]").textinput('enable');
+			//is checked
+			//enable text field
+		}else{
+			//not checked
+			//disable text field
+			$(this).parents().siblings("[type=text]").textinput('disable');
+		}
+
+});
+
+$( '#history' ).live( 'pagebeforechange',function(event){
+ 	$("#history").find("input[type=checkbox]").each(function(){
+		if ($(this).is(":checked")){
+			$(this).parents().siblings("[type=text]").textinput('enable');
+		}else{
+			$(this).parents().siblings("[type=text]").textinput('disable');
+		}
+	});
+	$(".famHistoryCollapse").each(function(){
+		var numChildrenChecked = $(this).find("[type=checkbox]:checked").length;
+		if (numChildrenChecked > 0 ){
+			$(this).find("a").removeClass("ui-btn-up-a").addClass("ui-btn-up-b").data("theme", "b");
+		}else{
+			$(this).find("a").removeClass("ui-btn-up-b").addClass("ui-btn-up-a").data("theme", "a");
+		}
+	});
+
+
+});
+
+
+$(".famHistoryCollapse")
+function collapseHistory(){
+	$(".famHistoryCollapse").trigger( "collapse" );
+}
+function expandHistory(){
+	$(".famHistoryCollapse").trigger( "expand" );
+}
 
 $.fn.clearForm = function() {
   return this.each(function() {
@@ -66,29 +115,19 @@ $(".FamHistory").bind("click", function(){
 	
 	// var childrenChecked = $(".FamHistoryParent").children().has(this).children().children().children(".ui-checkbox").children("input:checked").length;
 	var childrenChecked = $(".famHistoryCollapse").has(this).children("div").children().children("fieldset").children().children().children("input:checked").length;
-	var isChecked = $(this).is(":checked");
-
-
-
-
+	var isChecked = $(this).parent().children("input").is(":checked")
 	
 	if (isChecked){
 		
 		//this section is is if it being turned on 
-		$(".famHistoryCollapse").has(this).data("theme", "b");
-		// if (childrenChecked >= 0){
-		// 	//then mark parent as checked
-		// 	$(this).parent().parent().parent().parent().parent().children().children("a").removeClass("ui-btn-up-a").addClass("ui-btn-up-b").data("theme", "b");
-		// }else{
-		// 	$(this).parent().parent().parent().parent().parent().children().children("a").removeClass("ui-btn-up-b").addClass("ui-btn-up-a").data("theme", "a");
-		// }
+		$(".famHistoryCollapse").has(this).children("").children("a").removeClass("ui-btn-up-a").addClass("ui-btn-up-b").data("theme", "b")
 	}else{
 		//Turning the field off
-				if (childrenChecked > 1){
-			//then mark parent as checked
-			$(".famHistoryCollapse").has(this).data("theme", "b");
+		if (childrenChecked > 0){
+			//then mark parent as checked		
+			$(".famHistoryCollapse").has(this).children("").children("a").removeClass("ui-btn-up-a").addClass("ui-btn-up-b").data("theme", "b");
 		}else{
-			$(".famHistoryCollapse").has(this).data("theme", "a");
+			$(".famHistoryCollapse").has(this).children("").children("a").removeClass("ui-btn-up-b").addClass("ui-btn-up-a").data("theme", "a");
 		}
 
 	}
@@ -470,18 +509,25 @@ var app = {
 				break;
 			}
 		}
+		$("#history").find("input[type=checkbox]").each(function(){
+		if ($(this).is(":checked")){
+			$(this).parents().siblings("[type=text]").textinput('enable');
+		}else{
+			$(this).parents().siblings("[type=text]").textinput('disable');
+		}
+	});
+	$(".famHistoryCollapse").each(function(){
+		var numChildrenChecked = $(this).find("[type=checkbox]:checked").length;
+		if (numChildrenChecked > 0 ){
+			$(this).find("a").removeClass("ui-btn-up-a").addClass("ui-btn-up-b").data("theme", "b");
+		}else{
+			$(this).find("a").removeClass("ui-btn-up-b").addClass("ui-btn-up-a").data("theme", "a");
+		}
+	});
+
+
 		console.log("End Patient Load");
-		// $('.ui-collapsible-heading-toggle').trigger( "expand" );
 
-		// var fields = data.patient.mobileCheckFields,
-		// values = data.patient.mobileCheckValues;
-		// for(var x=0; x < fields.length; x++){
-		// 		$('#'+fields[x]).checkboxradio().attr('checked', values[x]).checkboxradio("refresh");	
-
-		// }
-				// $('.ui-collapsible-heading-toggle').trigger( "collapse" );
-
-		// $("form").loadJSON(data)
 	},
 	clearPatient : function(){
 		$("#confirm-clear-button").bind("click", app.acceptPatientClear);
